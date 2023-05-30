@@ -55,71 +55,78 @@
             </li>
           </ul>
         </header>
-        <div class="search-options">
+        <section class="search-options">
           <h2 class="visually-hidden">Настройка параметров поиска</h2>
-          <fieldset class="filter-catalogue">
-            <legend class="filter-catalogue-title">Инфраструктура:</legend>
-            <ul class="filter-catalogue-list">
-              <li class="filter-catalogue-item">
-                <label class="control">
-                  <input class="control-input" type="checkbox" name="swimming-pool" checked>
-                Бассейн
-                </label>
-              </li>
-              <li class="filter-catalogue-item">
-                <label class="control">
-                  <input class="control-input" type="checkbox" name="parking" checked>
-                Парковка
-                </label>
-              </li>
-              <li class="filter-catalogue-item">
-                <label class="control">
-                  <input class="control-input" type="checkbox" name="wi-fi">
-                Wi-Fi
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="filter-catalogue">
-            <legend class="filter-catalogue-title">Тип жилья:</legend>
-            <ul class="filter-catalogue-list">
-              <li class="filter-catalogue-item">
-                <label class="control">
-                  <input class="control-input" type="radio" name="accomodation-type" value="hotel" checked>
-                Гостиница
-                </label>
-              </li>
-              <li class="filter-catalogue-item">
-                <label class="control">
-                  <input class="control-input" type="radio" name="accomodation-type" value="motel">
-                Мотель
-                </label>
-              </li>
-              <li class="filter-catalogue-item">
-                <label class="control">
-                  <input class="control-input" type="radio" name="accomodation-type" value="apartments">
-                Апартаменты
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="filter-catalogue">
-            <legend class="filter-catalogue-title">Стоимость, &#8381:</legend>
-            <label class="filter-catalogue-price">
-              <input type="text" name="minimum" placeholder="от" value="0">
-              <input type="text" name="maximum" placeholder="до" value="9000">
-            </label>
-          </fieldset>
+          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+            <fieldset class="filter-catalogue">
+              <legend class="filter-catalogue-title">Инфраструктура:</legend>
+              <ul class="filter-catalogue-list">
+                <li class="filter-catalogue-item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="swimming-pool" checked>
+                  Бассейн
+                  </label>
+                </li>
+                <li class="filter-catalogue-item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="parking" checked>
+                  Парковка
+                  </label>
+                </li>
+                <li class="filter-catalogue-item">
+                  <label class="control">
+                    <input class="control-input" type="checkbox" name="wi-fi">
+                  Wi-Fi
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </form>
+          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+            <fieldset class="filter-catalogue">
+              <legend class="filter-catalogue-title">Тип жилья:</legend>
+              <ul class="filter-catalogue-list">
+                <li class="filter-catalogue-item">
+                  <label class="control">
+                    <input class="control-input" type="radio" name="accomodation-type" value="hotel" checked>
+                  Гостиница
+                  </label>
+                </li>
+                <li class="filter-catalogue-item">
+                  <label class="control">
+                    <input class="control-input" type="radio" name="accomodation-type" value="motel">
+                  Мотель
+                  </label>
+                </li>
+                <li class="filter-catalogue-item">
+                  <label class="control">
+                    <input class="control-input" type="radio" name="accomodation-type" value="apartments">
+                  Апартаменты
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </form>
+          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+            <fieldset class="filter-catalogue">
+              <legend class="filter-catalogue-title">Стоимость, &#8381:</legend>
+              <label class="filter-catalogue-price visually-hidden"> цена гостиницы от
+                <input type="text" name="minimum-price" placeholder="от" value="0">
+              </label>
+              <label class="filter-catalogue-price visually-hidden"> цена гостиницы до
+                <input type="text" name="maximum-price" placeholder="до" value="9000">
+              </label>
+            </fieldset>
+          </form>
           <div class="buttons-aplly-clear-container">
             <button class="button button-apply" type="submit">Применить</button>
-            <button class="button button-clear" type="submit">Сбросить</button>
+            <button class="button button-clear" type="reset">Сбросить</button>
           </div>
-        </div>
+        </section>
       </section>
       <section class="catalogue">
         <header class="catalogue-header">
-          <!-- Число 38 должно генерироваться, как это сделать? --->
-          <h2>Найдено гостиниц 38</h2>
+          <h2>Найдено гостиниц <output class="hotels-quantity">38</output></h2>
           <select class="select-control" aria-label="Сортировка">
             <option value="First-cheapest">Сначала дешевые</option>
           </select>
@@ -157,7 +164,13 @@
               <div class="hotel-buttons">
                 <a href="#" class="button button-more">Подробнее</a>
                 <button class="button button-add-favourite" type="submit">В избранное</button>
-                <img src="" alt="Рейтинг гостиницы">
+                <div class="hotel-rating-stars">
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star visually-hidden"></span>
+                </div>
                 <p class="hotel-rate">Рейтинг: 8,5</p>
               </div>
             </li>
@@ -171,7 +184,12 @@
               <div class="hotel-buttons">
                 <a href="#" class="button button-more">Подробнее</a>
                 <button class="button button-add-favourite button-add-favourite-active" type="submit">В избранном</button>
-                <img src="" alt="Рейтинг гостиницы">
+                <div class="hotel-rating-stars">
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star visually-hidden"></span>
                 <p class="hotel-rate">Рейтинг: 9,2</p>
               </div>
             </li>
@@ -185,7 +203,12 @@
               <div class="hotel-buttons">
                 <a href="#" class="button button-more">Подробнее</a>
                 <button class="button button-add-favourite" type="submit">В избранное</button>
-                <img src="" alt="Рейтинг гостиницы">
+                <div class="hotel-rating-stars">
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star visually-hidden"></span>
+                  <span class="star visually-hidden"></span>
                 <p class="hotel-rate">Рейтинг: 6,9</p>
               </div>
             </li>
@@ -199,7 +222,12 @@
               <div class="hotel-buttons">
                 <a href="#" class="button button-more">Подробнее</a>
                 <button class="button button-add-favourite" type="submit">В избранное</button>
-                <img src="" alt="Рейтинг гостиницы">
+                <div class="hotel-rating-stars">
+                  <span class="star"></span>
+                  <span class="star"></span>
+                  <span class="star visually-hidden"></span>
+                  <span class="star visually-hidden"></span>
+                  <span class="star visually-hidden"></span>
                 <p class="hotel-rate">Рейтинг: 5,0</p>
               </div>
             </li>

@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "PT-sans";
+    src: url("/fonts/ptsans-400.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+   }
+
+@font-face {
+    font-family: "PT-sans";
+    src: url("/fonts/ptsans-700.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+body {
+    font-family: "PT-sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(51, 51, 51, 1);
+    background-color: #FDFDFF;
+    margin: 0;
+}
+
+
+
+.main-header {
+    width: 1060px;
+    height: 64px;
+    margin: 0 auto;
+    padding: 0 70px;
+    display: flex;
+}
+
+.header-navigation {
+    display: flex;
+    margin-left: 28px;
+}
+
+.navigation-list {
+    display: flex;
+    list-style: none;
+    padding: 0 16px;
+    margin: 0;
+
+}
+
+.navigation-item {
+    margin-right: 40px;
+    padding: 20px 0;
+
+}
+
+.navigation-item:last-child {
+    margin-right: 0;
+}
+
+.navigation-item a {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000000;
+}
+
+.navigation-item-current {
+    border-bottom: 2px solid #756257;;
+}
+
+.header-buttons {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 20px 0 auto;
+}
+
+.navigation-user-item {
+    padding: 22px 12.5px;
+}
+
+.button {
+    background: #756157;
+    border-radius: 4px;
+}
+
+.button-header {
+    color: #FFFFFF;
+    text-decoration: none;
+    align-self: center;
+    padding: 8px 34px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+main {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.hero {
+    background-image: url(/img/index-background-top.jpg);
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-words {
+    display: block;
+    margin: 0 auto 25px;
+    padding-top: 51.4px;
+}
+
+.background-style {
+    display: block;
+    margin: 0;
+}
+
+.hero h2 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 69px 290px 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 69px;
+}
