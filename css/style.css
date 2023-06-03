@@ -1,14 +1,14 @@
 @font-face {
     font-family: "PT-sans";
-    src: url("/fonts/ptsans-400.woff2") format("woff2");
+    src: url("../fonts/ptsans-400.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
    }
 
 @font-face {
-    font-family: "PT-sans";
-    src: url("/fonts/ptsans-700.woff2") format("woff2");
+    font-family: "PT-sans bold";
+    src: url("../fonts/ptsans-700.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -24,7 +24,7 @@
 /* Общая стилистика */
 
 body {
-    font-family: "PT-sans", sans-serif;
+    font-family: "PT-sans", "Arial" sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -76,7 +76,7 @@ body {
 }
 
 .navigation-item-current {
-    border-bottom: 2px solid #756257;;
+    border-bottom: 2px solid #756257;
 }
 
 .header-buttons {
@@ -101,6 +101,7 @@ body {
     align-self: center;
     padding: 8px 34px;
     text-transform: uppercase;
+    font-family: "PT-sans bold", sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
@@ -108,7 +109,8 @@ body {
 
 /* Стили для main */
 
-h2 {
+.title-h2 {
+    font-family: "PT-sans bold", sans-serif;
     font-weight: 700;
     font-size: 30px;
     line-height: 36px;
@@ -159,7 +161,6 @@ main {
 /* Стили для секции преимущества */
 
 .advantages {
-    width: 1200px;
     margin: 0 auto;
     padding: 0;
 }
@@ -185,6 +186,7 @@ main {
 }
 
 .advantage-item h3 {
+    font-family: "PT-sans bold", sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
@@ -234,7 +236,6 @@ main {
 
 
 .suggestion {
-    width: 1200px;
     margin: 0 auto;
     padding: 0;
 }
@@ -242,7 +243,6 @@ main {
 /* Стили для заголовка секции приглашения */
 
 .invitation {
-    width: 1200px;
     margin: 64px auto;
     padding: 0;
     text-align: center;
@@ -276,6 +276,7 @@ main {
 }
 
 .suggestion-item h3 {
+    font-family: "PT-sans bold", sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
@@ -320,6 +321,7 @@ main {
     align-self: center;
     padding: 8px 50px;
     text-transform: uppercase;
+    font-family: "PT-sans bold", sans-serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 36px;
@@ -345,7 +347,7 @@ main {
     margin-bottom: 20px;
 }
 
-.subscription h2 {
+.subscription p {
     margin: 0;
     margin-bottom: 54px;
 }
