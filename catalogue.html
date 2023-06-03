@@ -8,7 +8,7 @@
   <body>
     <header class="main-header">
       <a class="heared-logo" href="#">
-        <img src="/img/logo.svg" alt="logo" width="140px">
+        <img src="img/logo.svg" alt="logo" width="140">
       </a>
       <nav class="header-navigation">
         <ul class="navigation-list">
@@ -27,17 +27,17 @@
         <li class="navigation-item">
           <a class="navigation-link" href="#">
             <span class="visually-hidden">Поиск</span>
-            <img src="/img/search.svg" width="20px" height="20px">
+            <img src="img/search.svg" width="20" height="20" alt="Значок поиска">
           </a>
         </li>
         <li class="navigation-item">
           <a class="navigation-link" href="#">
             <span class="visually-hidden">Избранное</span>
-            <img src="/img/heart.svg" width="20px" height="20px">
+            <img src="img/heart.svg" width="20" height="20" alt="Значок избранное">
           </a>
         </li>
       </ul>
-      <a class="button" href="#">Хочу сюда!</a>
+      <a class="button" href="catalog.html" aria-current="page">Хочу сюда!</a>
     </header>
     <main class="page-main">
       <section class="search">
@@ -46,9 +46,12 @@
           <ul calss="breadcrumbs">
             <li class="breadcrumbs-item">
               <a class="breadcrumbs-link" href="#">
-                <img src="img/Breadcrumbs-home.svg" width="12px" height="12px">
+                <img src="img/breadcrumbs-home.svg" width="12" height="12" alt="Иконка домой">
                 <span class="visually-hidden">Домой</span>
               </a>
+            </li>
+            <li class="breadcrumbs-item">
+              <img src="img/breadcrumbs-arrow.svg" width="8" alt="Маленькая стрелочка">
             </li>
             <li class="breadcrumbs-item">
               <a class="breadcrumbs-link">Гостиницы</a>
@@ -57,7 +60,7 @@
         </header>
         <section class="search-options">
           <h2 class="visually-hidden">Настройка параметров поиска</h2>
-          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="post">
             <fieldset class="filter-catalogue">
               <legend class="filter-catalogue-title">Инфраструктура:</legend>
               <ul class="filter-catalogue-list">
@@ -81,8 +84,6 @@
                 </li>
               </ul>
             </fieldset>
-          </form>
-          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
             <fieldset class="filter-catalogue">
               <legend class="filter-catalogue-title">Тип жилья:</legend>
               <ul class="filter-catalogue-list">
@@ -106,8 +107,6 @@
                 </li>
               </ul>
             </fieldset>
-          </form>
-          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
             <fieldset class="filter-catalogue">
               <legend class="filter-catalogue-title">Стоимость, &#8381:</legend>
               <label class="filter-catalogue-price visually-hidden"> цена гостиницы от
@@ -117,11 +116,11 @@
                 <input type="text" name="maximum-price" placeholder="до" value="9000">
               </label>
             </fieldset>
+            <div class="buttons-aplly-clear-container">
+              <button class="button button-apply" type="submit">Применить</button>
+              <button class="button button-clear" type="reset">Сбросить</button>
+            </div>
           </form>
-          <div class="buttons-aplly-clear-container">
-            <button class="button button-apply" type="submit">Применить</button>
-            <button class="button button-clear" type="reset">Сбросить</button>
-          </div>
         </section>
       </section>
       <section class="catalogue">
@@ -133,29 +132,29 @@
           <ul class="view-control">
             <li class="view-control-item">
               <a href="#" class="button button-light">
-                <img src="img/Table view.svg" alt="Упрощенный внешний вид табличного представления">
+                <img src="img/table-view.svg" width="16" height="14" alt="Упрощенный внешний вид табличного представления">
                 <span class="visually-hidden">Вид таблицей</span>
               </a>
             </li>
             <li class="view-control-item">
               <a href="#" class="button">
-                <img src="img/Block view.svg" alt="Упрощенный внешний вид блочного представления">
+                <img src="img/block-view.svg" width="16" height="14" alt="Упрощенный внешний вид блочного представления">
                 <span class="visually-hidden">Вид блоками</span>
               </a>
             </li>
             <li class="view-control-item">
               <a href="#" class="button">
-                <img src="img/List view.svg" alt="Упрощенный внешний вид списочного представления">
+                <img src="img/list-view.svg" width="16" height="14" alt="Упрощенный внешний вид списочного представления">
                 <span class="visually-hidden">Вид списком</span>
               </a>
             </li>
           </ul>
         </header>
         <div class="choose-hotels">
-          <!-- <h2 class="visually-hidden">Подходящие варианты</h2> -->
+          <h2 class="visually-hidden">Найденные варианты отелей</h2>
           <ul class="hotels">
             <li class="hotel">
-              <img class="hotel-photo" src="img/Amara Resort & Spa.jpg" alt="Amara Resort & Spa">
+              <img class="hotel-photo" src="img/amara_resort_spa.jpg" width="300" height="212" alt="Amara Resort & Spa">
               <h3>Amara Resort & Spa</h3>
               <div class="price">
                 <p class="type">Гостиница</p>
@@ -175,7 +174,7 @@
               </div>
             </li>
             <li class="hotel">
-              <img class="hotel-photo" src="img/Villas at Poco Diablo.jpg" alt="Villas at Poco Diablo">
+              <img class="hotel-photo" src="img/villas-at-poco-diablo.jpg" width="300" height="212" alt="Villas at Poco Diablo">
               <h3>Villas at Poco Diablo</h3>
               <div class="price">
                 <p class="type">Гостиница</p>
@@ -190,11 +189,12 @@
                   <span class="star"></span>
                   <span class="star"></span>
                   <span class="star visually-hidden"></span>
+                </div>
                 <p class="hotel-rate">Рейтинг: 9,2</p>
               </div>
             </li>
             <li class="hotel">
-              <img class="hotel-photo" src="img/Desert Quail Inn.jpg" alt="Desert Quail Inn">
+              <img class="hotel-photo" src="img/desert-quail-inn.jpg" width="300" height="212" alt="Desert Quail Inn">
               <h3>Desert Quail Inn</h3>
               <div class="price">
                 <p class="type">Гостиница</p>
@@ -209,11 +209,12 @@
                   <span class="star"></span>
                   <span class="star visually-hidden"></span>
                   <span class="star visually-hidden"></span>
+                </div>
                 <p class="hotel-rate">Рейтинг: 6,9</p>
               </div>
             </li>
             <li class="hotel">
-              <img class="hotel-photo" src="img/GreenTree Inn.jpg" alt="GreenTree Inn">
+              <img class="hotel-photo" src="img/green_tree-inn.jpg" width="300" height="212" alt="GreenTree Inn">
               <h3>GreenTree Inn</h3>
               <div class="price">
                 <p class="type">Гостиница</p>
@@ -228,6 +229,7 @@
                   <span class="star visually-hidden"></span>
                   <span class="star visually-hidden"></span>
                   <span class="star visually-hidden"></span>
+                </div>
                 <p class="hotel-rate">Рейтинг: 5,0</p>
               </div>
             </li>
@@ -247,7 +249,7 @@
             <a class="pagination-link" href="#">4</a>
           </li>
           <li class="pagination-item">
-            <a class="pagination-link" href="#">...</a>
+            ...
           </li>
           <li class="pagination-item">
             <a class="pagination-link" href="#">10</a>
@@ -271,23 +273,23 @@
       <ul class="social-networks">
         <li class="social-network-item">
           <a class="vk" href="https://vk.com/htmlacademy">
-            <img src="img/VK.svg" alt="VK logo">
+            <img src="img/vk.svg" alt="VK logo" width="24" height="14">
           </a>
         </li>
         <li class="social-network-item">
           <a class="telegramm" href="https://t.me/htmlacademy ">
-            <img src="img/Telegramm.svg" alt="Telegramm logo">
+            <img src="img/telegram.svg" alt="Telegram logo" width="18" height="16">
           </a>
         </li>
         <li class="social-network-item">
           <a class="youtube" href="https://www.youtube.com/user/htmlacademyru">
-            <img src="img/Youtube.svg" alt="Youtube logo">
+            <img src="img/youtube.svg" alt="Youtube logo" width="22" height="17">
           </a>
         </li>
       </ul>
       <a class="telephone-number" href="tel:+78128121212">+7 (812) 812-12-12</a>
       <a class="htlm-academy-logo" href="https://htmlacademy.ru/">
-        <img src="img/HTML Academy.svg" alt="HTMLAcademy logo">
+        <img src="img/html-academy.svg" alt="HTMLAcademy logo" width="115" height="33">
       </a>
     </footer>
   </body>

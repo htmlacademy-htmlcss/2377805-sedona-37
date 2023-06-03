@@ -14,9 +14,14 @@
     font-display: swap;
 }
 
+/* Как сделать visually-hidden будет рассмотрено позднее */
+/*
 .visually-hidden {
     display: none;
 }
+*/
+
+/* Общая стилистика */
 
 body {
     font-family: "PT-sans", sans-serif;
@@ -29,7 +34,7 @@ body {
     margin: 0;
 }
 
-
+/* Стили для header */
 
 .main-header {
     width: 1060px;
@@ -101,6 +106,17 @@ body {
     line-height: 20px;
 }
 
+/* Стили для main */
+
+h2 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+
+/* Стили для hero */
+
 main {
     width: 1200px;
     margin: 0 auto;
@@ -108,10 +124,11 @@ main {
 }
 
 .hero {
-    background-image: url(/img/index-background-top.jpg);
+    background-image: url(../img/index-background-top.jpg);
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
+    margin-bottom: 90px;
 }
 
 .welcome-words {
@@ -126,12 +143,9 @@ main {
 }
 
 .hero h2 {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 36px;
     margin: 69px 290px 25px;
     text-align: center;
-    text-transform: uppercase;
+
 }
 
 .hero p {
@@ -139,5 +153,199 @@ main {
     line-height: 26px;
     text-align: center;
     margin: 0;
-    margin-bottom: 69px;
+
+}
+
+/* Стили для секции преимущества */
+
+.advantages {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.agvantages-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 1200px;
+}
+
+.advantage-item {
+    width: 230px;
+    padding: 102px 85px;
+    text-align: center;
+}
+
+.advantage-item-big  {
+    width: 800px;
+    height: 385px;
+}
+
+.advantage-item h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.advantage-item-background-blue .advantage-item-header-decoration {
+    width: 60px;
+    line-height: 0;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.advantage-item-background-light-blue .advantage-item-header-decoration, .advantage-item-background-grey .advantage-item-header-decoration{
+    width: 60px;
+    line-height: 0;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.advantage-item-description {
+    margin: 0 auto;
+}
+
+/* Стилистика фонов секции преимуществ */
+
+.advantage-item-background-blue {
+    background-color: #82B3D3;
+    color: #FFFFFF;
+}
+
+.advantage-item-background-light-blue {
+    background-color: rgba(131, 179, 211, 0.12);
+}
+
+.advantage-item-background-grey {
+    background-color: rgba(131, 179, 211, 0.2);
+}
+
+/* Стили для секции приглашения */
+
+
+.suggestion {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Стили для заголовка секции приглашения */
+
+.invitation {
+    width: 1200px;
+    margin: 64px auto;
+    padding: 0;
+    text-align: center;
+}
+
+.invitation h2 {
+    margin: 0 auto;
+    width: 505px;
+}
+
+.invitation-reason-description {
+    font-size: 22px;
+    line-height: 26px;
+    margin-top: 20px;
+}
+
+/* Стили для списка преимуществ секции приглашения */
+
+.suggestion-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 1200px;
+}
+
+.suggestion-item {
+    width: 400px;
+    text-align: center;
+    padding: 81px 85px;
+}
+
+.suggestion-item h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    margin: 30px auto;
+}
+
+.suggestion-item p {
+    margin: 0;
+}
+
+.suggestion-item-background-light-blue {
+    background-color: rgba(131, 179, 211, 0.12);
+}
+
+/* Стили для секции перехода к поиску отеля */
+
+.search-hotel {
+    width: 592px;
+    margin: 0 auto;
+    padding: 96px 304px;
+    text-align: center;
+}
+
+.search-hotel h2 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.search-hotel p {
+    margin: 0 auto;
+    margin-bottom: 54px;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+/* Стили для кнопки секции перехода к поиску отеля */
+
+.button-booking {
+    color: #FFFFFF;
+    text-decoration: none;
+    align-self: center;
+    padding: 8px 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+}
+
+
+/* Стили для секции подписки */
+
+.subscription {
+    width: 684px;
+    margin: 0 auto;
+    padding: 96px 258px 104px;
+    text-align: center;
+    background-image: url(../img/background-subscribe.png);
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.subscription h2 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.subscription h2 {
+    margin: 0;
+    margin-bottom: 54px;
 }
