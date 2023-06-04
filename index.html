@@ -43,8 +43,9 @@
     <main class="page-main">
       <h1 class="visually-hidden">Сайт города Седона</h1>
       <section class="hero">
-        <img class="welcome-words" src="img/welcome.svg" alt="Добро пожаловать в великолепную Седону. Потому что Гранд Каньон отстой!">
-        <img class="background-style" src="img/index-background-top-decoration.svg" alt="Дополнительная стилистика фона">
+        <div class="herobackground">
+          <img class="welcome-words" src="img/welcome.svg" alt="Добро пожаловать в великолепную Седону. Потому что Гранд Каньон отстой!">
+        </div>
         <h2 class="title-h2">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
         <p class="reason-description">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
       </section>
@@ -118,9 +119,9 @@
         <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
           <p class="subscription-form-inline">
             <label class="form-label">
-              <input type="email" name="subscriber-email" placeholder="Ваш e-mail">
-              <button class="button" type="submit">Подписаться</button>
+              <input class="email" type="email" name="subscriber-email" placeholder="Ваш e-mail">
             </label>
+            <button class="button button-subscribe" type="submit">Подписаться</button>
           </p>
         </form>
       </section>
