@@ -24,7 +24,7 @@
 /* Общая стилистика */
 
 body {
-    font-family: "PT-sans", "Arial", sans-serif;
+    font-family: "PT-sans", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -73,6 +73,12 @@ body {
     align-self: center;
 }
 
+.navigation-item-current {
+    border-bottom: 2px solid #756257;
+    padding-top: 21.5px;
+    padding-bottom: 18.5px;
+}
+
 .navigation-item:last-child {
     margin-right: 0;
 }
@@ -85,10 +91,6 @@ body {
     color: #000000;
 }
 
-.navigation-item-current {
-    border-bottom: 2px solid #756257;
-    padding-bottom: 18px;
-}
 
 .header-buttons {
     display: flex;
@@ -98,14 +100,22 @@ body {
 }
 
 .navigation-user-item {
-    width: 44px;
+    width: 32px;
+    margin: 0 6px;
     text-align: center;
     line-height: 64px;
+
+
 }
 
 .navigation-user-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 .navigation-user-link-favourite {
@@ -126,8 +136,8 @@ body {
     border-radius: 10px;
     width: 20px;
     padding: 5px 0 5px 0;
-    margin-left: 7px;
-    margin-top: 7px;
+    margin-left: 18px;
+    margin-top: -19px;
 }
 
 .button {
@@ -222,6 +232,7 @@ body {
 .advantage-item-big  {
     width: 800px;
     height: 385px;
+    vertical-align: middle;
 }
 
 .advantage-item-title {
@@ -406,7 +417,7 @@ body {
     align-self: center;
     padding: 8px 50px;
     text-transform: uppercase;
-    font-family: "PT-sans", "Arial", sans-serif;
+    font-family: "PT-sans", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -429,6 +440,9 @@ body {
     border-radius: 4px 0 0 4px;
     height: 24px;
     padding: 14px 20px;
+    font-family: "PT-sans", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
     font-size: 18px;
 }
 
@@ -471,7 +485,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%
+    margin: 0 6px;
 }
 
 .telephone-number {
@@ -617,7 +631,7 @@ body {
     background: #82B3D3;
     border: none;
     border-radius: 4px;
-    font-family: "PT-sans", "Arial", sans-serif;
+    font-family: "PT-sans", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -631,7 +645,7 @@ body {
     padding: 8px 57.5px;
     background: none;
     border: none;
-    font-family: "PT-sans", "Arial", sans-serif;
+    font-family: "PT-sans", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -667,18 +681,23 @@ body {
     color: #000000;
 }
 
+
 .select-control {
     width: 292px;
     padding: 14px 40px 14px 20px;
     border: 2px solid #E5E5E5;
     border-radius: 4px;
-    font-family: 'PT Sans';
+    font-family: "PT-sans", Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
+    appearance: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(/img/custom-selector-option.svg);
+    background-repeat: no-repeat;
+    background-position: 260px 21px;
 }
-
-/* необходимо подвинуть указатель раскрытия списка И фраза Сначала Дешевые не попала в пиксель перфект */
 
 
 .view-control {
@@ -702,6 +721,7 @@ body {
     margin: 0;
     background: none;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .button-table-view {
@@ -804,7 +824,7 @@ body {
     padding: 8px 0 8px 0;
     background: #82B3D3;
     border: none;
-    font-family: "PT-sans", "Arial", sans-serif;
+    font-family: "PT-sans", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
