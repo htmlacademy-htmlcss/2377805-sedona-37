@@ -14,7 +14,9 @@
     font-display: swap;
 }
 
-/* Как сделать visually-hidden будет рассмотрено позднее */
+html {
+    height: 100%;
+}
 
 .visually-hidden {
     position: absolute;
@@ -39,6 +41,7 @@ body {
     color: #333333;
     margin: 0;
     background: #F2F2F2;
+    height: 100%;
 }
 
 .shadow {
@@ -46,6 +49,9 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     width: 1200px;
     background-color: #FDFDFF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 
@@ -147,12 +153,39 @@ body {
 }
 
 .button {
-    background: #756157;
     border-radius: 4px;
+    color: #FFFFFF;
+}
+
+.button-dark {
+    background: #756157;
+    transition-property: background, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.button-dark:hover {
+    background: #615048;
+}
+
+.button-dark:focus {
+    background: #615048;
+    outline: none;
+}
+
+.button-dark:active {
+    background: #756157;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* не уверен что disable задан верно*/
+
+.button-dark:disabled {
+    background: #E5E5E5;
+    color: #FFFFFF;
 }
 
 .button-header {
-    color: #FFFFFF;
     text-decoration: none;
     align-self: center;
     padding: 8px 34px;
@@ -165,8 +198,10 @@ body {
 /* Стили для main */
 
 .page-main {
+    width: 1200px;
     margin: 0 auto;
     padding: 0;
+    flex-grow: 1;
 }
 
 .title-h2 {
@@ -374,7 +409,6 @@ body {
 /* Стили для кнопки секции перехода к поиску отеля */
 
 .button-booking {
-    color: #FFFFFF;
     text-decoration: none;
     padding: 8px 50px;
     text-transform: uppercase;
@@ -418,19 +452,45 @@ body {
     justify-content: center;
 }
 
-.button-subscribe {
+.button-blue {
+    background: #82B3D3;
+    transition-property: background, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.button-blue:hover {
+    background: #68A2CA;
+}
+
+.button-blue:focus {
+    background: #68A2CA;
+    outline: none;
+}
+
+.button-blue:active {
+    background: #82B3D3;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* не уверен что disable задан верно*/
+
+.button-blue:disabled {
+    background: #E5E5E5;
     color: #FFFFFF;
+}
+
+.button-subscribe {
     align-self: center;
     padding: 8px 50px;
     text-transform: uppercase;
-    font-family: "PT-sans", Arial, Helvetica, sans-serif;
+    font-family: inherit;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 36px;
     border: none;
     border-radius: 0 4px 4px 0;
-    background: #82B3D3;
     cursor: pointer;
 }
 
@@ -446,7 +506,7 @@ body {
     border-radius: 4px 0 0 4px;
     height: 24px;
     padding: 14px 20px;
-    font-family: "PT-sans", Arial, Helvetica, sans-serif;
+    font-family: inherit;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -485,13 +545,40 @@ body {
     height: 100%;
 }
 
-.vk, .telegramm, .youtube {
+.social-network-link {
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     margin: 0 6px;
+    fill: #83B3D3;
+}
+
+.social-network-link svg {
+    fill: #83B3D3;
+    transition-property: fill;
+    transition-duration: 0.3s;
+}
+
+
+.social-network-link svg:hover {
+    fill: #68A2CA;
+}
+
+/* затык с фокусом, так как фокус делается на ссылку, а не на SVG*/
+
+.social-network-link svg:focus {
+    fill: #68A2CA;
+}
+
+.social-network-link:focus {
+    fill: #68A2CA;
+    outline: none;
+}
+
+.social-network-link svg:active {
+    fill: rgba(104, 162, 202, 0.3);
 }
 
 .telephone-number {
@@ -634,31 +721,50 @@ body {
 
 .button-apply {
     padding: 8px 50px;
-    background: #82B3D3;
     border: none;
-    border-radius: 4px;
-    font-family: "PT-sans", Arial, Helvetica, sans-serif;
+    font-family: inherit;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: #FFFFFF;
     text-transform: uppercase;
     cursor: pointer;
 }
 
 .button-clear {
-    padding: 8px 57.5px;
+    padding: 5px 54.5px;
     background: none;
-    border: none;
-    font-family: "PT-sans", Arial, Helvetica, sans-serif;
+    border: 3px solid #83b3d300;
+    font-family: inherit;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: #FFFFFF;
     text-transform: uppercase;
     cursor: pointer;
+    transition-property: opacity, border;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.button-clear:hover {
+    opacity: 0.6;
+}
+
+
+.button-clear:focus {
+    border: 3px solid #83B3D3;
+    outline: none;
+}
+
+.button-clear:active {
+    opacity: 0.3;
+    border: 3px solid #83b3d300;
+}
+
+.button-clear:disabled {
+    opacity: 0.1;
+    border: 3px solid #83b3d300;
 }
 
 /* Стили секции каталог */
@@ -693,7 +799,7 @@ body {
     padding: 14px 40px 14px 20px;
     border: 2px solid #E5E5E5;
     border-radius: 4px;
-    font-family: "PT-sans", Arial, Helvetica, sans-serif;
+    font-family: inherit;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
@@ -703,8 +809,28 @@ body {
     background-image: url(/img/custom-selector-option.svg);
     background-repeat: no-repeat;
     background-position: 260px 21px;
+    transition-property: border, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
+.select-control:hover {
+   border: 2px solid #68A2CA;
+}
+
+.select-control:focus {
+    border: 2px solid #68A2CA;
+    outline: none;
+ }
+
+ .select-control:active {
+    border: 2px solid #3F5E72;
+ }
+
+ .select-control:disabled {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.3);
+}
 
 .view-control {
     margin: 0 0 0 70px;
@@ -830,7 +956,7 @@ body {
     padding: 8px 0 8px 0;
     background: #82B3D3;
     border: none;
-    font-family: "PT-sans", Arial, Helvetica, sans-serif;
+    font-family: inherit;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -842,6 +968,30 @@ body {
 
 .button-add-favourite-applied {
     background: #7DB54F;
+    transition-property: background, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.button-add-favourite-applied:hover {
+    background: #6C9E42;
+}
+
+.button-add-favourite-applied:focus {
+    background: #6C9E42;
+    outline: none;
+}
+
+.button-add-favourite-applied:active {
+    background: #7DB54F;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* не уверен что disable задан верно*/
+
+.button-add-favourite-applied:disabled {
+    background: #E5E5E5;
+    color: #FFFFFF;
 }
 
 .hotel-rating-stars {
