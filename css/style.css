@@ -63,6 +63,7 @@ body {
     margin: 0 auto;
     padding: 0 70px;
     display: flex;
+    z-index: 1;
 }
 
 .header-navigation {
@@ -566,13 +567,7 @@ body {
     fill: #68A2CA;
 }
 
-/* затык с фокусом, так как фокус делается на ссылку, а не на SVG*/
-
 .social-network-link svg:focus {
-    fill: #68A2CA;
-}
-
-.social-network-link:focus {
     fill: #68A2CA;
     outline: none;
 }
@@ -586,7 +581,23 @@ body {
     line-height: 40px;
     text-decoration: none;
     color: #000000;
+    transition-property: color;
+    transition-duration: 0.3s;
 }
+
+.telephone-number:hover {
+    color: #756157;
+}
+
+.telephone-number:focus {
+    color: #756157;
+    outline: none;
+}
+
+.telephone-number:active {
+    color: rgba(117, 97, 87, 0.3);
+}
+
 
 .htlm-academy-logo {
     margin: 0;
@@ -594,6 +605,26 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.htlm-academy-logo svg {
+    fill: #000000;
+    transition-property: fill;
+    transition-duration: 0.3s;
+}
+
+
+.htlm-academy-logo svg:hover {
+    fill: #756157;
+}
+
+.htlm-academy-logo svg:focus {
+    fill: #756157;
+    outline: none;
+}
+
+.htlm-academy-logo svg:active {
+    fill: rgba(117, 97, 87, 0.3);
 }
 
 /* Стили для страницы каталога */
@@ -856,14 +887,27 @@ body {
     cursor: pointer;
 }
 
-.button-table-view {
-    border: 2px solid #000000;
-
-}
-
-.button-block-view, .button-list-view {
+.button-hotels-view {
     border: 2px solid #E5E5E5;
 }
+
+.button-hotels-view:hover {
+    border-color: #000000;
+}
+
+.button-hotels-view:focus {
+    border-color: #68A2CA;
+    outline: none;
+}
+
+.button-hotels-view:active {
+    border-color: #000000;
+}
+
+.button-hotels-view-active {
+    border: 2px solid #000000;
+}
+
 
 /* Стили секции main каталог */
 
@@ -1065,6 +1109,23 @@ body {
     color: #FFFFFF;
     width: 60px;
     height: 60px;
+    transition-property: background, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.pagination-link:hover{
+    background: #68A2CA;
+}
+
+.pagination-link:focus{
+    background: #68A2CA;
+    outline: none;
+}
+
+.pagination-link:active{
+    background: #82B3D3;
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .pagination-more {
@@ -1080,7 +1141,11 @@ body {
     height: 60px;
 }
 
-.pagination-current {
+.pagination-current,
+.pagination-current:hover,
+.pagination-current:focus,
+.pagination-current:active
+{
     background: #F2F2F2;
     color: #000000;
 }
