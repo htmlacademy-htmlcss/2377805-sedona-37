@@ -81,7 +81,7 @@ body {
 }
 
 .navigation-item {
-    margin-right: 40px;
+    margin-right: 32px;
     padding: 0;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -149,8 +149,8 @@ body {
     border-radius: 10px;
     width: 20px;
     padding: 5px 0 5px 0;
-    margin-left: 18px;
-    margin-top: -19px;
+    margin-left: 17px;
+    margin-top: -21px;
 }
 
 .button {
@@ -178,8 +178,6 @@ body {
     background: #756157;
     color: rgba(255, 255, 255, 0.3);
 }
-
-/* не уверен что disable задан верно*/
 
 .button-dark:disabled {
     background: #E5E5E5;
@@ -263,11 +261,20 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .advantage-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     width: 230px;
-    padding: 102px 85px;
+    min-height: 385px;
+    padding: 0 85px;
+    margin: 0;
     text-align: center;
 }
 
@@ -371,6 +378,11 @@ body {
     padding: 81px 85px;
 }
 
+.suggestion-item img{
+    display: block;
+    margin: 0 auto;
+}
+
 .sugestion-item-title {
     font-weight: 700;
     font-size: 24px;
@@ -391,6 +403,10 @@ body {
 /* Стили для секции перехода к поиску отеля */
 
 .search-hotel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 592px;
     margin: 0 auto;
     padding: 96px 304px;
@@ -410,6 +426,7 @@ body {
 /* Стили для кнопки секции перехода к поиску отеля */
 
 .button-booking {
+    margin: 0;
     text-decoration: none;
     padding: 8px 50px;
     text-transform: uppercase;
@@ -427,8 +444,6 @@ body {
     text-align: center;
     background-image: url(../img/background-subscribe.png);
     background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
 }
 
 .subscription .title-h2 {
@@ -446,8 +461,9 @@ body {
 
 /* Стили для формы ввода и кнопки, в секции подписки */
 
+
 .subscription-form-inline {
-    width: 684px;
+    min-width: 684px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -474,8 +490,6 @@ body {
     color: rgba(255, 255, 255, 0.3);
 }
 
-/* не уверен что disable задан верно*/
-
 .button-blue:disabled {
     background: #E5E5E5;
     color: #FFFFFF;
@@ -499,10 +513,11 @@ body {
 .form-label {
     margin: 0;
     padding: 0;
+    flex-grow: 1;
 }
 
 .email {
-    width: 452px;
+    min-width: 412px;
     border: none;
     border-radius: 4px 0 0 4px;
     height: 24px;
@@ -524,7 +539,7 @@ body {
 
 .main-footer {
     margin: 0 auto;
-    padding: 40px 70px 30px;
+    padding: 45px 70px 35px;
     width: 1060px;
     display: flex;
     justify-content: space-between;
@@ -556,23 +571,23 @@ body {
     fill: #83B3D3;
 }
 
-.social-network-link svg {
+.social-network-link {
     fill: #83B3D3;
     transition-property: fill;
     transition-duration: 0.3s;
 }
 
 
-.social-network-link svg:hover {
+.social-network-link:hover {
     fill: #68A2CA;
 }
 
-.social-network-link svg:focus {
+.social-network-link:focus {
     fill: #68A2CA;
     outline: none;
 }
 
-.social-network-link svg:active {
+.social-network-link:active {
     fill: rgba(104, 162, 202, 0.3);
 }
 
@@ -680,7 +695,7 @@ body {
 }
 
 .breadcrumbs-link {
-    display: inline-block;
+    margin: 0;
 }
 
 .catalog-filter {
@@ -739,6 +754,10 @@ body {
     width: 20px;
     height: 20px;
     background: #FFFFFF;
+}
+
+.filter-catalogue-price::placeholder {
+    text-align: right;
 }
 
 .buttons-aplly-clear-container {
@@ -827,7 +846,7 @@ body {
 
 .select-control {
     width: 292px;
-    padding: 14px 40px 14px 20px;
+    padding: 12px 38px 12px 18px;
     border: 2px solid #E5E5E5;
     border-radius: 4px;
     font-family: inherit;
@@ -937,6 +956,10 @@ body {
     margin: 0;
 }
 
+.hotel-item-link {
+    text-decoration: none;
+}
+
 
 .hotel-photo {
     display: block;
@@ -1030,8 +1053,6 @@ body {
     background: #7DB54F;
     color: rgba(255, 255, 255, 0.3);
 }
-
-/* не уверен что disable задан верно*/
 
 .button-add-favourite-applied:disabled {
     background: #E5E5E5;
@@ -1167,3 +1188,97 @@ body {
 .email-dark {
     background: #F2F2F2;
 }
+
+
+
+
+
+
+/* Group */
+.catalog-filter-group {
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+    border: none;
+  }
+
+
+  /* Title */
+  .catalog-filter-title {
+    margin-bottom: 22px;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+  /* Range */
+  .range-scale {
+    position: relative;
+    height: 4px;
+    margin-bottom: 16px;
+    background-color: #242424;
+    border-radius: 2px;
+  }
+
+  .range-bar {
+    position: absolute;
+    height: 4px;
+    background-color: #af7842;
+  }
+
+  .range-toggle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #242424;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .range-toggle:hover {
+    background-color: #dbb590;
+  }
+
+  .range-toggle:active,
+  .range-toggle:focus {
+    outline: 3px solid #dbb590;
+  }
+
+  .toggle-min {
+    top: -8px;
+    left: -10px;
+  }
+
+  .toggle-max {
+    top: -8px;
+    right: -10px;
+  }
+
+  .range-wrapper-inputs {
+    display: flex;
+    justify-content: center;
+  }
+
+  .catalog-filter-label {
+    display: flex;
+    margin-right: 5px;
+  }
+
+  .range-input {
+    width: 30px;
+    padding: 0 2px;
+    font: inherit;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    appearance: textfield;
+  }
+
+  .range-input::-webkit-outer-spin-button,
+  .range-input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
