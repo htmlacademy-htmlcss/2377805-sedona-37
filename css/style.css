@@ -192,6 +192,7 @@ body {
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
+    min-width: 91.2px;
 }
 
 /* Стили для main */
@@ -262,7 +263,6 @@ body {
     padding: 0;
     list-style: none;
     justify-content: center;
-    align-items: center;
 }
 
 .advantage-item {
@@ -272,16 +272,17 @@ body {
     align-items: center;
     flex-grow: 1;
     width: 230px;
-    min-height: 385px;
-    padding: 0 85px;
+    min-height: 345px;
+    padding: 20px 85px;
     margin: 0;
     text-align: center;
 }
 
 .advantage-item-big  {
     width: 800px;
-    height: 385px;
     vertical-align: middle;
+    background-color: #82B3D3;
+    display: flex;
 }
 
 .advantage-item-title {
@@ -361,6 +362,7 @@ body {
     font-size: 22px;
     line-height: 26px;
     margin-top: 20px;
+    padding: 0 20px;
 }
 
 /* Стили для списка преимуществ секции приглашения */
@@ -444,6 +446,7 @@ body {
     text-align: center;
     background-image: url(../img/background-subscribe.png);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .subscription .title-h2 {
@@ -649,6 +652,7 @@ body {
 .search {
     background: url(../img/background-search.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 35px 70px 70px;
     color: #FFFFFF;
@@ -821,7 +825,7 @@ body {
 
 .catalogue {
     margin: 0;
-    padding: 50px 70px 60px;
+    padding: 50px 70px;
 }
 
 
@@ -983,6 +987,7 @@ body {
 
 .price .type, .price .price-result {
     margin: 0;
+    max-width: 140px;
 }
 
 .hotel-buttons-list {
@@ -1095,6 +1100,7 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     position: relative;
 }
@@ -1111,6 +1117,7 @@ body {
     width: 60px;
     height: 60px;
     margin-right: 8px;
+    margin-bottom: 10px;
 }
 
 .pagination-item:last-child {
