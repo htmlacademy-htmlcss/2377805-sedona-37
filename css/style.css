@@ -14,17 +14,26 @@
     font-display: swap;
 }
 
-/* Как сделать visually-hidden будет рассмотрено позднее */
+html {
+    height: 100%;
+}
 
 .visually-hidden {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 
 /* Общая стилистика */
 
 body {
-    font-family: "PT-sans", "Arial", sans-serif;
+    font-family: "PT-sans", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -32,6 +41,7 @@ body {
     color: #333333;
     margin: 0;
     background: #F2F2F2;
+    height: 100%;
 }
 
 .shadow {
@@ -39,6 +49,9 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     width: 1200px;
     background-color: #FDFDFF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 
@@ -50,6 +63,7 @@ body {
     margin: 0 auto;
     padding: 0 70px;
     display: flex;
+    z-index: 1;
 }
 
 .header-navigation {
@@ -59,6 +73,7 @@ body {
 
 .navigation-list {
     display: flex;
+    align-items: baseline;
     list-style: none;
     padding: 0 16px;
     margin: 0;
@@ -66,11 +81,15 @@ body {
 }
 
 .navigation-item {
-    margin-right: 40px;
+    margin-right: 32px;
     padding: 0;
     padding-top: 20px;
     padding-bottom: 20px;
-    align-self: center;
+}
+
+.navigation-item-current {
+    border-bottom: 2px solid #756257;
+    padding-bottom: 19px;
 }
 
 .navigation-item:last-child {
@@ -85,10 +104,6 @@ body {
     color: #000000;
 }
 
-.navigation-item-current {
-    border-bottom: 2px solid #756257;
-    padding-bottom: 18px;
-}
 
 .header-buttons {
     display: flex;
@@ -98,14 +113,22 @@ body {
 }
 
 .navigation-user-item {
-    width: 44px;
+    width: 32px;
+    margin: 0 6px;
     text-align: center;
     line-height: 64px;
+
+
 }
 
 .navigation-user-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 .navigation-user-link-favourite {
@@ -126,17 +149,42 @@ body {
     border-radius: 10px;
     width: 20px;
     padding: 5px 0 5px 0;
-    margin-left: 7px;
-    margin-top: 7px;
+    margin-left: 17px;
+    margin-top: -21px;
 }
 
 .button {
-    background: #756157;
     border-radius: 4px;
+    color: #FFFFFF;
+}
+
+.button-dark {
+    background: #756157;
+    transition-property: background, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.button-dark:hover {
+    background: #615048;
+}
+
+.button-dark:focus {
+    background: #615048;
+    outline: none;
+}
+
+.button-dark:active {
+    background: #756157;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.button-dark:disabled {
+    background: #E5E5E5;
+    color: #FFFFFF;
 }
 
 .button-header {
-    color: #FFFFFF;
     text-decoration: none;
     align-self: center;
     padding: 8px 34px;
@@ -144,13 +192,16 @@ body {
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
+    min-width: 91.2px;
 }
 
 /* Стили для main */
 
 .page-main {
+    width: 1200px;
     margin: 0 auto;
     padding: 0;
+    flex-grow: 1;
 }
 
 .title-h2 {
@@ -211,17 +262,27 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+    justify-content: center;
 }
 
 .advantage-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     width: 230px;
-    padding: 102px 85px;
+    min-height: 345px;
+    padding: 20px 85px;
+    margin: 0;
     text-align: center;
 }
 
 .advantage-item-big  {
     width: 800px;
-    height: 385px;
+    vertical-align: middle;
+    background-color: #82B3D3;
+    display: flex;
 }
 
 .advantage-item-title {
@@ -301,6 +362,7 @@ body {
     font-size: 22px;
     line-height: 26px;
     margin-top: 20px;
+    padding: 0 20px;
 }
 
 /* Стили для списка преимуществ секции приглашения */
@@ -316,6 +378,11 @@ body {
     width: 400px;
     text-align: center;
     padding: 81px 85px;
+}
+
+.suggestion-item img{
+    display: block;
+    margin: 0 auto;
 }
 
 .sugestion-item-title {
@@ -338,6 +405,10 @@ body {
 /* Стили для секции перехода к поиску отеля */
 
 .search-hotel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 592px;
     margin: 0 auto;
     padding: 96px 304px;
@@ -357,7 +428,7 @@ body {
 /* Стили для кнопки секции перехода к поиску отеля */
 
 .button-booking {
-    color: #FFFFFF;
+    margin: 0;
     text-decoration: none;
     padding: 8px 50px;
     text-transform: uppercase;
@@ -375,8 +446,7 @@ body {
     text-align: center;
     background-image: url(../img/background-subscribe.png);
     background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
+    background-size: cover;
 }
 
 .subscription .title-h2 {
@@ -394,26 +464,51 @@ body {
 
 /* Стили для формы ввода и кнопки, в секции подписки */
 
+
 .subscription-form-inline {
-    width: 684px;
+    min-width: 684px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
 }
 
-.button-subscribe {
+.button-blue {
+    background: #82B3D3;
+    transition-property: background, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.button-blue:hover {
+    background: #68A2CA;
+}
+
+.button-blue:focus {
+    background: #68A2CA;
+    outline: none;
+}
+
+.button-blue:active {
+    background: #82B3D3;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.button-blue:disabled {
+    background: #E5E5E5;
     color: #FFFFFF;
+}
+
+.button-subscribe {
     align-self: center;
     padding: 8px 50px;
     text-transform: uppercase;
-    font-family: "PT-sans", "Arial", sans-serif;
+    font-family: inherit;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 36px;
     border: none;
     border-radius: 0 4px 4px 0;
-    background: #82B3D3;
     cursor: pointer;
 }
 
@@ -421,14 +516,18 @@ body {
 .form-label {
     margin: 0;
     padding: 0;
+    flex-grow: 1;
 }
 
 .email {
-    width: 452px;
+    min-width: 412px;
     border: none;
     border-radius: 4px 0 0 4px;
     height: 24px;
     padding: 14px 20px;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
     font-size: 18px;
 }
 
@@ -443,7 +542,7 @@ body {
 
 .main-footer {
     margin: 0 auto;
-    padding: 40px 70px 30px;
+    padding: 45px 70px 35px;
     width: 1060px;
     display: flex;
     justify-content: space-between;
@@ -465,13 +564,34 @@ body {
     height: 100%;
 }
 
-.vk, .telegramm, .youtube {
+.social-network-link {
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%
+    margin: 0 6px;
+    fill: #83B3D3;
+}
+
+.social-network-link {
+    fill: #83B3D3;
+    transition-property: fill;
+    transition-duration: 0.3s;
+}
+
+
+.social-network-link:hover {
+    fill: #68A2CA;
+}
+
+.social-network-link:focus {
+    fill: #68A2CA;
+    outline: none;
+}
+
+.social-network-link:active {
+    fill: rgba(104, 162, 202, 0.3);
 }
 
 .telephone-number {
@@ -479,7 +599,23 @@ body {
     line-height: 40px;
     text-decoration: none;
     color: #000000;
+    transition-property: color;
+    transition-duration: 0.3s;
 }
+
+.telephone-number:hover {
+    color: #756157;
+}
+
+.telephone-number:focus {
+    color: #756157;
+    outline: none;
+}
+
+.telephone-number:active {
+    color: rgba(117, 97, 87, 0.3);
+}
+
 
 .htlm-academy-logo {
     margin: 0;
@@ -489,6 +625,26 @@ body {
     justify-content: center;
 }
 
+.htlm-academy-logo svg {
+    fill: #000000;
+    transition-property: fill;
+    transition-duration: 0.3s;
+}
+
+
+.htlm-academy-logo svg:hover {
+    fill: #756157;
+}
+
+.htlm-academy-logo svg:focus {
+    fill: #756157;
+    outline: none;
+}
+
+.htlm-academy-logo svg:active {
+    fill: rgba(117, 97, 87, 0.3);
+}
+
 /* Стили для страницы каталога */
 
 /* Стили секции Поиска */
@@ -496,6 +652,7 @@ body {
 .search {
     background: url(../img/background-search.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 35px 70px 70px;
     color: #FFFFFF;
@@ -542,7 +699,7 @@ body {
 }
 
 .breadcrumbs-link {
-    display: inline-block;
+    margin: 0;
 }
 
 .catalog-filter {
@@ -603,6 +760,10 @@ body {
     background: #FFFFFF;
 }
 
+.filter-catalogue-price::placeholder {
+    text-align: right;
+}
+
 .buttons-aplly-clear-container {
     padding: 0;
     margin: 0 0 0 70px;
@@ -614,38 +775,57 @@ body {
 
 .button-apply {
     padding: 8px 50px;
-    background: #82B3D3;
     border: none;
-    border-radius: 4px;
-    font-family: "PT-sans", "Arial", sans-serif;
+    font-family: inherit;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: #FFFFFF;
     text-transform: uppercase;
     cursor: pointer;
 }
 
 .button-clear {
-    padding: 8px 57.5px;
+    padding: 5px 54.5px;
     background: none;
-    border: none;
-    font-family: "PT-sans", "Arial", sans-serif;
+    border: 3px solid #83b3d300;
+    font-family: inherit;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: #FFFFFF;
     text-transform: uppercase;
     cursor: pointer;
+    transition-property: opacity, border;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.button-clear:hover {
+    opacity: 0.6;
+}
+
+
+.button-clear:focus {
+    border: 3px solid #83B3D3;
+    outline: none;
+}
+
+.button-clear:active {
+    opacity: 0.3;
+    border: 3px solid #83b3d300;
+}
+
+.button-clear:disabled {
+    opacity: 0.1;
+    border: 3px solid #83b3d300;
 }
 
 /* Стили секции каталог */
 
 .catalogue {
     margin: 0;
-    padding: 50px 70px 60px;
+    padding: 50px 70px;
 }
 
 
@@ -667,19 +847,44 @@ body {
     color: #000000;
 }
 
+
 .select-control {
     width: 292px;
-    padding: 14px 40px 14px 20px;
+    padding: 12px 38px 12px 18px;
     border: 2px solid #E5E5E5;
     border-radius: 4px;
-    font-family: 'PT Sans';
+    font-family: inherit;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
+    appearance: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(/img/custom-selector-option.svg);
+    background-repeat: no-repeat;
+    background-position: 260px 21px;
+    transition-property: border, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
-/* необходимо подвинуть указатель раскрытия списка И фраза Сначала Дешевые не попала в пиксель перфект */
+.select-control:hover {
+   border: 2px solid #68A2CA;
+}
 
+.select-control:focus {
+    border: 2px solid #68A2CA;
+    outline: none;
+ }
+
+ .select-control:active {
+    border: 2px solid #3F5E72;
+ }
+
+ .select-control:disabled {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.3);
+}
 
 .view-control {
     margin: 0 0 0 70px;
@@ -702,16 +907,30 @@ body {
     margin: 0;
     background: none;
     border-radius: 4px;
+    cursor: pointer;
 }
 
-.button-table-view {
-    border: 2px solid #000000;
-
-}
-
-.button-block-view, .button-list-view {
+.button-hotels-view {
     border: 2px solid #E5E5E5;
 }
+
+.button-hotels-view:hover {
+    border-color: #000000;
+}
+
+.button-hotels-view:focus {
+    border-color: #68A2CA;
+    outline: none;
+}
+
+.button-hotels-view:active {
+    border-color: #000000;
+}
+
+.button-hotels-view-active {
+    border: 2px solid #000000;
+}
+
 
 /* Стили секции main каталог */
 
@@ -741,6 +960,10 @@ body {
     margin: 0;
 }
 
+.hotel-item-link {
+    text-decoration: none;
+}
+
 
 .hotel-photo {
     display: block;
@@ -764,6 +987,7 @@ body {
 
 .price .type, .price .price-result {
     margin: 0;
+    max-width: 140px;
 }
 
 .hotel-buttons-list {
@@ -804,7 +1028,7 @@ body {
     padding: 8px 0 8px 0;
     background: #82B3D3;
     border: none;
-    font-family: "PT-sans", "Arial", sans-serif;
+    font-family: inherit;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -816,6 +1040,28 @@ body {
 
 .button-add-favourite-applied {
     background: #7DB54F;
+    transition-property: background, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.button-add-favourite-applied:hover {
+    background: #6C9E42;
+}
+
+.button-add-favourite-applied:focus {
+    background: #6C9E42;
+    outline: none;
+}
+
+.button-add-favourite-applied:active {
+    background: #7DB54F;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.button-add-favourite-applied:disabled {
+    background: #E5E5E5;
+    color: #FFFFFF;
 }
 
 .hotel-rating-stars {
@@ -854,6 +1100,7 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     position: relative;
 }
@@ -870,6 +1117,7 @@ body {
     width: 60px;
     height: 60px;
     margin-right: 8px;
+    margin-bottom: 10px;
 }
 
 .pagination-item:last-child {
@@ -889,6 +1137,23 @@ body {
     color: #FFFFFF;
     width: 60px;
     height: 60px;
+    transition-property: background, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.pagination-link:hover{
+    background: #68A2CA;
+}
+
+.pagination-link:focus{
+    background: #68A2CA;
+    outline: none;
+}
+
+.pagination-link:active{
+    background: #82B3D3;
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .pagination-more {
@@ -904,7 +1169,11 @@ body {
     height: 60px;
 }
 
-.pagination-current {
+.pagination-current,
+.pagination-current:hover,
+.pagination-current:focus,
+.pagination-current:active
+{
     background: #F2F2F2;
     color: #000000;
 }
@@ -926,3 +1195,97 @@ body {
 .email-dark {
     background: #F2F2F2;
 }
+
+
+
+
+
+
+/* Group */
+.catalog-filter-group {
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+    border: none;
+  }
+
+
+  /* Title */
+  .catalog-filter-title {
+    margin-bottom: 22px;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+  /* Range */
+  .range-scale {
+    position: relative;
+    height: 4px;
+    margin-bottom: 16px;
+    background-color: #242424;
+    border-radius: 2px;
+  }
+
+  .range-bar {
+    position: absolute;
+    height: 4px;
+    background-color: #af7842;
+  }
+
+  .range-toggle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #242424;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .range-toggle:hover {
+    background-color: #dbb590;
+  }
+
+  .range-toggle:active,
+  .range-toggle:focus {
+    outline: 3px solid #dbb590;
+  }
+
+  .toggle-min {
+    top: -8px;
+    left: -10px;
+  }
+
+  .toggle-max {
+    top: -8px;
+    right: -10px;
+  }
+
+  .range-wrapper-inputs {
+    display: flex;
+    justify-content: center;
+  }
+
+  .catalog-filter-label {
+    display: flex;
+    margin-right: 5px;
+  }
+
+  .range-input {
+    width: 30px;
+    padding: 0 2px;
+    font: inherit;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    appearance: textfield;
+  }
+
+  .range-input::-webkit-outer-spin-button,
+  .range-input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
