@@ -99,10 +99,11 @@
                   </li>
                 </ul>
               </fieldset>
+
               <fieldset class="catalog-filter-group">
                 <legend class="catalog-filter-title">Цена:</legend>
 
-                <div class="range">
+
                   <div class="range-scale">
                     <div class="range-bar" style="left: 42px; width: 136px">
                       <button class="range-toggle toggle-min">
@@ -114,28 +115,36 @@
                     </div>
                   </div>
 
-                  <div class="range-wrapper-inputs">
-                    <label class="catalog-filter-label">
-                      от <input class="range-input" type="number" value="50" name="min-price"> ₽
-                    </label>
-                    <label class="catalog-filter-label">
-                      до <input class="range-input" type="number" value="1500" name="max-price" style="width: 37px"> ₽
-                    </label>
-                  </div>
-                </div>
               </fieldset>
+
               <fieldset class="filter-catalogue">
                 <legend class="filter-catalogue-title">Стоимость, &#8381;:</legend>
-                <label class="filter-catalogue-price" aria-label="цена гостиницы от">
-                  <input type="text" name="minimum-price" placeholder="от" value="0">
-                </label>
-                <label class="filter-catalogue-price" aria-label="цена гостиницы до">
-                  <input type="text" name="maximum-price" placeholder="до" value="9000">
-                </label>
+                <div class="filter-catalogue-price-container">
+                  <div class="filter-catalogue-price-wrapper">
+                    <input type="text" id="price-from" name="minimum-price" placeholder="от">
+                    <label class="filter-catalogue-price" for="price-from" aria-label="цена гостиницы от">0</label>
+                  </div>
+                  <div class="filter-catalogue-price-wrapper">
+                    <input type="text" id="price-up-to" name="maximum-price" placeholder="до">
+                    <label class="filter-catalogue-price" for="price-up-to" aria-label="цена гостиницы до">9000</label>
+                  </div>
+                </div>
+                <div class="range-scale">
+                  <div class="range-bar" style="left: 42px; width: 136px">
+                    <button class="range-toggle toggle-min">
+                      <span class="visually-hidden">Изменить минимальную цену.</span>
+                    </button>
+                    <button class="range-toggle toggle-max">
+                      <span class="visually-hidden">Изменить максимальную цену.</span>
+                    </button>
+                  </div>
+                </div>
+                <!--
                 <label class="catalogue-price-ranger" aria-label="Бегунки выбора стоимости гостиницы">
                   <input type="range" name="min-price" min="0" max="11000" value="0">
                   <input type="range" name="max-price" min="0" max="11000" value="9000">
                 </label>
+                -->
               </fieldset>
               <div class="buttons-aplly-clear-container">
                 <button class="button button-blue button-apply" type="submit">Применить</button>

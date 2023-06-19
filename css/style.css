@@ -289,6 +289,7 @@ body {
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
+    width: 175px;
     text-transform: uppercase;
     margin: 0 0 62px 0;
     position: relative;
@@ -725,13 +726,14 @@ body {
 
 .filter-catalogue-title {
     padding: 0;
+    margin: 0 0 32px 0;
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
 }
 
 .filter-catalogue-list {
-    margin: 32px 0 0 0;
+    margin: 0;
     padding: 0;
     list-style: none;
     font-size: 18px;
@@ -772,6 +774,92 @@ body {
     gap: 20px;
     justify-content: end;
 }
+
+.filter-catalogue-price-container {
+    display: flex;
+}
+
+.filter-catalogue-price-wrapper {
+    width: 143px;
+    position: relative;
+}
+
+.filter-catalogue-price-wrapper input {
+    padding: 12px 20px;
+    width: 103px;
+    border: none;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.filter-catalogue-price-wrapper:nth-child(1) input {
+    border-radius: 4px 0 0 4px;
+    text-align: right;
+}
+
+.filter-catalogue-price-wrapper:nth-child(2) input {
+    border-radius: 0 4px 4px 0;
+    text-align: right;
+}
+
+.filter-catalogue-price-wrapper:nth-child(1) {
+    margin-right: 2px;
+}
+
+.filter-catalogue-price {
+    position: absolute;
+    color: #000000;
+    left:20px;
+    top: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.range-scale {
+    position: relative;
+    height: 4px;
+    margin-bottom: 16px;
+    background-color: #242424;
+    border-radius: 2px;
+  }
+
+  .range-bar {
+    position: absolute;
+    height: 4px;
+    background-color: #af7842;
+  }
+
+  .range-toggle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #242424;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .range-toggle:hover {
+    background-color: #dbb590;
+  }
+
+  .range-toggle:active,
+  .range-toggle:focus {
+    outline: 3px solid #dbb590;
+  }
+
+  .toggle-min {
+    top: -8px;
+    left: -10px;
+  }
+
+  .toggle-max {
+    top: -8px;
+    right: -10px;
+  }
+
+
 
 .button-apply {
     padding: 8px 50px;
@@ -1218,74 +1306,4 @@ body {
     font-weight: 700;
     color: #000000;
     text-transform: uppercase;
-  }
-
-  /* Range */
-  .range-scale {
-    position: relative;
-    height: 4px;
-    margin-bottom: 16px;
-    background-color: #242424;
-    border-radius: 2px;
-  }
-
-  .range-bar {
-    position: absolute;
-    height: 4px;
-    background-color: #af7842;
-  }
-
-  .range-toggle {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #ffffff;
-    border: 2px solid #242424;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  .range-toggle:hover {
-    background-color: #dbb590;
-  }
-
-  .range-toggle:active,
-  .range-toggle:focus {
-    outline: 3px solid #dbb590;
-  }
-
-  .toggle-min {
-    top: -8px;
-    left: -10px;
-  }
-
-  .toggle-max {
-    top: -8px;
-    right: -10px;
-  }
-
-  .range-wrapper-inputs {
-    display: flex;
-    justify-content: center;
-  }
-
-  .catalog-filter-label {
-    display: flex;
-    margin-right: 5px;
-  }
-
-  .range-input {
-    width: 30px;
-    padding: 0 2px;
-    font: inherit;
-    text-align: center;
-    background-color: transparent;
-    border: none;
-    appearance: textfield;
-  }
-
-  .range-input::-webkit-outer-spin-button,
-  .range-input::-webkit-inner-spin-button {
-    appearance: none;
-    margin: 0;
   }
