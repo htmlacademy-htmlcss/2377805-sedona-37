@@ -795,6 +795,8 @@ body {
     font-weight: 700;
     font-size: 18px;
     line-height: 24px;
+    transition-property: outline;
+    transition-duration: 0.15s;
 }
 
 .filter-catalogue-price-wrapper:nth-child(1) input {
@@ -803,6 +805,10 @@ body {
 
 .filter-catalogue-price-wrapper:nth-child(2) input {
     border-radius: 0 4px 4px 0;
+}
+
+.filter-catalogue-price-wrapper input:focus {
+    outline: 3px solid #83B3D3;
 }
 
 .filter-catalogue-price-wrapper:nth-child(1) {
@@ -841,15 +847,16 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition-property: outline;
+    transition-duration: 0.15s;
 }
 
-.range-toggle:hover {
-    background-color: #dbb590;
-}
-
-.range-toggle:active,
 .range-toggle:focus {
-    outline: 3px solid #dbb590;
+    outline: 3px solid #83B3D3;
+}
+
+.range-toggle:active {
+    outline: 2px solid #83B3D3;
 }
 
 .toggle-min {
