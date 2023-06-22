@@ -223,6 +223,7 @@ body {
     background-image: url(../img/index-background-top-decoration.svg), url(../img/index-background-top.jpg);
     background-repeat: no-repeat;
     background-position: bottom, top;
+    background-color: #5c8b99;
 }
 
 .welcome-words {
@@ -282,18 +283,24 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
+}
 
+.advantage-item-big-vise-versa {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
 }
 
 .advantage-item-photo-wrapper {
     height: 100%;
 }
 
-.advantage-item-photo-position-before {
+.advantage-item-photo-wrapper-position-before {
     order: -1;
 }
 
-.advantage-item-photo, .advantage-item-photo-position-before {
+.advantage-item-photo {
+    display: block;
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -462,6 +469,7 @@ body {
     background-image: url(../img/background-subscribe.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #a9dae9;
 }
 
 .subscription .title-h2 {
@@ -668,6 +676,7 @@ body {
     background: url(../img/background-search.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #7c5941;
     margin: 0;
     padding: 35px 70px 70px;
     color: #FFFFFF;
