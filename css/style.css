@@ -73,6 +73,7 @@ body {
 
 .navigation-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     list-style: none;
     padding: 0 16px;
@@ -1068,16 +1069,21 @@ body {
     width: 300px;
     border: 1px solid #E6E6E6;
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
 }
 
 .hotel-item:nth-child(3n) {
     margin-right: 0;
 }
 
-.hotel-item-link {
+.hotel-item-photo-link, .hotel-item-title-link {
     text-decoration: none;
 }
 
+.hotel-item-title-link {
+    flex-grow: 1;
+}
 
 .hotel-photo {
     display: block;
@@ -1115,7 +1121,6 @@ body {
 
 .button-more-conatainer {
     margin: 0 20px 0 0;
-    height: 36px;
     display: flex;
 }
 
