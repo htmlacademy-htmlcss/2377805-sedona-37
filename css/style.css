@@ -73,6 +73,7 @@ body {
 
 .navigation-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     list-style: none;
     padding: 0 16px;
@@ -223,6 +224,7 @@ body {
     background-image: url(../img/index-background-top-decoration.svg), url(../img/index-background-top.jpg);
     background-repeat: no-repeat;
     background-position: bottom, top;
+    background-color: #5c8b99;
 }
 
 .welcome-words {
@@ -282,18 +284,24 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
+}
 
+.advantage-item-big-vise-versa {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
 }
 
 .advantage-item-photo-wrapper {
     height: 100%;
 }
 
-.advantage-item-photo-position-before {
+.advantage-item-photo-wrapper-position-before {
     order: -1;
 }
 
-.advantage-item-photo, .advantage-item-photo-position-before {
+.advantage-item-photo {
+    display: block;
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -313,7 +321,7 @@ body {
     position: absolute;
     content: "";
     border-top: 2px solid rgba(255, 255, 255, 0.3);
-    top: 86px;
+    bottom: -32px;
     left: 50%;
     margin-left: -30px;
     width: 60px;
@@ -323,7 +331,7 @@ body {
     position: absolute;
     content: "";
     border-top: 2px solid rgba(0, 0, 0, 0.3);
-    top: 86px;
+    bottom: -32px;
     left: 50%;
     margin-left: -30px;
     width: 60px;
@@ -390,7 +398,7 @@ body {
 }
 
 .suggestion-item {
-    width: 400px;
+    width: 230px;
     text-align: center;
     padding: 81px 85px;
 }
@@ -462,6 +470,7 @@ body {
     background-image: url(../img/background-subscribe.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #a9dae9;
 }
 
 .subscription .title-h2 {
@@ -668,6 +677,7 @@ body {
     background: url(../img/background-search.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #7c5941;
     margin: 0;
     padding: 35px 70px 70px;
     color: #FFFFFF;
@@ -1046,8 +1056,9 @@ body {
 
 .hotels-list {
     display: grid;
+    gap: 18px;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 0 62px 0;
+    margin: 0 0 80px 0;
     padding: 0;
     list-style: none;
 }
@@ -1055,20 +1066,20 @@ body {
 
 .hotel-item {
     padding: 20px;
-    margin: 0 18px 18px 0;
     width: 300px;
     border: 1px solid #E6E6E6;
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
 }
 
-.hotel-item:nth-child(3n) {
-    margin-right: 0;
-}
-
-.hotel-item-link {
+.hotel-item-photo-link, .hotel-item-title-link {
     text-decoration: none;
 }
 
+.hotel-item-title-link {
+    flex-grow: 1;
+}
 
 .hotel-photo {
     display: block;
@@ -1106,7 +1117,6 @@ body {
 
 .button-more-conatainer {
     margin: 0 20px 0 0;
-    height: 36px;
     display: flex;
 }
 
@@ -1120,6 +1130,7 @@ body {
     padding: 8px 26px;
     border-radius: 4px;
     border: none;
+    max-width: 88px;
 }
 
 .button-add-favourite-container {
