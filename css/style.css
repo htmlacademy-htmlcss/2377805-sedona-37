@@ -194,6 +194,7 @@ body {
     font-size: 16px;
     line-height: 20px;
     min-width: 91.2px;
+    margin-right: 1px;
 }
 
 /* Стили для main */
@@ -596,14 +597,10 @@ body {
     height: 100%;
     margin: 0 6px;
     fill: #83B3D3;
-}
-
-.social-network-link {
-    fill: #83B3D3;
     transition-property: fill;
     transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
-
 
 .social-network-link:hover {
     fill: #68A2CA;
@@ -625,6 +622,7 @@ body {
     color: #000000;
     transition-property: color;
     transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
 .telephone-number:hover {
@@ -653,6 +651,7 @@ body {
     fill: #000000;
     transition-property: fill;
     transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
 
@@ -742,7 +741,7 @@ body {
 }
 
 .filter-catalogue:nth-child(1) {
-    margin-right: 70px;
+    margin-right: 71px;
 }
 
 .filter-catalogue:nth-child(2) {
@@ -776,16 +775,102 @@ body {
 }
 
 .control {
-    display: flex;
-    align-items: center;
+    position: relative;
+    display: block;
+    opacity: 1;
+    outline: none;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
-.control-input {
-    margin: 0 16px 0 0;
+/* Стилизация блока инфраструктуры */
+
+.control-mark {
+    position: absolute;
+    top: 2px;
+    left: 0;
     width: 20px;
     height: 20px;
-    background: #FFFFFF;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    transition-property: outline;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
 }
+
+.control-input[type="checkbox"]:checked + .control-mark::before{
+    position: absolute;
+    top: 1px;
+    width: 20px;
+    height: 19px;
+    background-image: url(../img/tick.svg);
+    content: "";
+}
+
+.control:hover {
+    opacity: 0.6;
+}
+
+.control-input:focus + .control-mark {
+    outline: 3px solid #83B3D3;
+}
+
+.control-input ~ span {
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.control-input:active ~ span {
+    opacity: 0.3;
+}
+
+.control-input:disabled + .control-mark {
+    opacity: 0.1;
+}
+
+.control-description {
+    margin-left: 36px;
+}
+
+/* Стилизация блока тип жилья */
+
+.control-mark-radio {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    transition-property: outline;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+}
+
+.control-input[type="radio"]:checked + .control-mark-radio::before{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/tick-radio.svg);
+    background-position: center;
+    content: "";
+}
+
+.control:hover {
+    opacity: 0.6;
+}
+
+.control-input:focus + .control-mark-radio {
+    outline: 3px solid #83B3D3;
+}
+
+.control-input:disabled + .control-mark-radio {
+    opacity: 0.1;
+}
+
+/* Стилизация блока цены */
 
 .filter-catalogue-price-container {
     display: flex;
@@ -807,6 +892,7 @@ body {
     line-height: 24px;
     transition-property: outline;
     transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
 }
 
 .filter-catalogue-price-wrapper:nth-child(1) input {
@@ -825,11 +911,21 @@ body {
     margin-right: 2px;
 }
 
-.filter-catalogue-price {
+.filter-catalogue-price-from {
     position: absolute;
     color: #000000;
     opacity: 0.3;
     left: 106px;
+    top: 12px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.filter-catalogue-price-to {
+    position: absolute;
+    color: #000000;
+    opacity: 0.3;
+    left: 104px;
     top: 12px;
     font-size: 18px;
     line-height: 24px;
@@ -859,6 +955,7 @@ body {
     cursor: pointer;
     transition-property: outline;
     transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
 }
 
 .range-toggle:focus {
@@ -900,7 +997,7 @@ body {
 
 .button-clear {
     padding: 5px 54.5px;
-    margin-top: 32px;
+    margin-top: 33px;
     background: none;
     border: 3px solid #83b3d300;
     font-family: inherit;
@@ -975,7 +1072,7 @@ body {
     appearance: none;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0);
-    background-image: url(/img/custom-selector-option.svg);
+    background-image: url(../img/custom-selector-option.svg);
     background-repeat: no-repeat;
     background-position: 258px 18px;
     transition-property: border, color;
@@ -1009,7 +1106,7 @@ body {
 }
 
 .view-control-item {
-    margin: 0 8px 0 0;
+    margin: 0 9px 0 0;
 }
 
 .view-control-item:last-child {
@@ -1052,6 +1149,15 @@ body {
 .choose-hotels {
     width: 1060px;
     margin-left: -1px;
+    position: relative;
+}
+
+.choose-hotels::before {
+    position: absolute;
+    content: "";
+    border-bottom: 1px solid #E6E6E6;
+    bottom: -40px;
+    width: 100%;
 }
 
 .hotels-list {
@@ -1066,6 +1172,8 @@ body {
 
 .hotel-item {
     padding: 20px;
+    padding-top: 21px;
+    padding-left: 21px;
     width: 300px;
     border: 1px solid #E6E6E6;
     border-radius: 4px;
@@ -1218,15 +1326,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    position: relative;
-}
 
-.pagination::before {
-    position: absolute;
-    content: "";
-    border-top: 1px solid #E6E6E6;
-    top: -39px;
-    width: 100%;
 }
 
 .pagination-item {
