@@ -782,6 +782,7 @@ body {
     transition-property: opacity;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
+    padding-left: 36px;
 }
 
 /* Стилизация блока инфраструктуры */
@@ -828,10 +829,6 @@ body {
 
 .control-input:disabled + .control-mark {
     opacity: 0.1;
-}
-
-.control-description {
-    margin-left: 36px;
 }
 
 /* Стилизация блока тип жилья */
@@ -1410,26 +1407,298 @@ body {
     background: #F2F2F2;
 }
 
+/* Стилизация модального окна */
 
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(242, 242, 242, 0.80);
+    z-index: 2;
+}
 
+/* Отключание видимости модального окна*/
 
+.modal-container {
+    display: none;
+}
 
-
-/* Group */
-.catalog-filter-group {
-    margin: 0;
-    margin-bottom: 40px;
-    padding: 0;
-    border: none;
-  }
-
-
-  /* Title */
-  .catalog-filter-title {
-    margin-bottom: 22px;
-    font-size: 20px;
-    line-height: 28px;
-    font-weight: 700;
+.modal {
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    margin: auto;
+    padding: 64px 70px;
+    width: 577px;
     color: #000000;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 64px;
+    right: 54px;
+    width: 52px;
+    height: 52px;
+    background-color: #F2F2F2;
+    background-image: url(../img/close-modal.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.modal-close-button:hover {
+   background-color: #E6E6E6;
+}
+
+.modal-close-button:focus {
+    outline: 3px solid #83B3D3;
+ }
+
+ .modal-close-button:active {
+    background-image: url(../img/close-modal-active.svg);
+ }
+
+.modal-content-title {
     text-transform: uppercase;
-  }
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 0 64px 0;
+}
+
+.search-hotel-form {
+    display: grid;
+    grid-template-columns: 137px 198px 131px 111px;
+    row-gap: 48px;
+}
+
+.date-input-title, .qty-adults-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: block;
+    align-self: center;
+    grid-column: 1/2;
+}
+
+.arrival-date, .departure-date {
+    position: relative;
+    padding: 0;
+    border-radius: 4px;
+    background-color: #F2F2F2;
+    background-image: url(../img/calendar-icon.svg);
+    background-position: right 20px center;
+    background-repeat: no-repeat;
+    grid-column: 2/-1;
+}
+
+.date-input {
+    padding: 12px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.date-input[type="date"] {
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.date-input:active {
+    border: none;
+    outline: none;
+}
+
+.date-input:focus {
+    border: none;
+    outline: none;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+.date-example {
+    position: absolute;
+    left: 20px;
+    top: 13px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.warning-wrong-date {
+    position: absolute;
+    left: 20px;
+    top: 52px;
+    color: #FF5757;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.warning-free-date {
+    position: absolute;
+    left: 20px;
+    top: 52px;
+    font-size: 16px;
+    line-height: 21px;
+    color: #333333;
+}
+
+.date-input:hover + .date-example {
+    display: none;
+}
+
+.qty-people-contatiner {
+    display: flex;
+    justify-content: flex-start;
+    width: 110px;
+    position: relative;
+}
+
+.qty-people-contatiner-adults {
+    grid-column: 2/3;
+}
+
+.button-change-people {
+    border: none;
+    cursor: pointer;
+    padding: 14px 10px;
+    background: #F2F2F2;
+    box-sizing: border-box;
+    width: 40px;
+}
+
+.button-minus-people {
+    border-radius: 4px 0 0 4px;
+}
+
+.button-plus-people {
+    border-radius: 0 4px 4px 0;
+}
+
+.button-minus-people:before {
+    position: absolute;
+    content: "";
+    border: 1px solid rgba(117, 97, 87, 0.3);
+    width: 12px;
+    top: 23px;
+    left: 13px;
+}
+
+.button-plus-people:before,
+.button-plus-people:after {
+    position: absolute;
+    content: "";
+    border: 1px solid rgba(117, 97, 87, 0.3);
+    width: 12px;
+    top: 23px;
+    right: 13px;
+}
+
+.button-plus-people:after {
+    transform: rotate(90deg);
+}
+
+.qty-adults {
+    width: 31px;
+}
+
+.qty-people-input {
+    padding: 14px 10px;
+    border: none;
+    box-sizing: border-box;
+    background: #F2F2F2;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    width: 100%;
+    text-align: center;
+    appearance: textfield;
+}
+
+.qty-people-input::-webkit-outer-spin-button,
+.qty-people-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.qty-children-wrapper {
+    grid-column: 3/4;
+    display: flex;
+    align-items: center;
+}
+
+.qty-children-title{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: block;
+    align-self: center;
+}
+
+.information-about-children {
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-image: url(../img/children-information-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.qty-people-contatiner-children {
+    grid-column: 4/5;
+}
+
+.button-minus-people-background {
+    border-radius: 4px 0 0 4px;
+    background-image: url(../img/minus-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.button-plus-people-background {
+    border-radius: 0 4px 4px 0;
+    background-image: url(../img/plus-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.button-found {
+    grid-column: 1/-1;
+    border: none;
+    border-radius: 10px;
+    padding: 18px 77px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 24px;
+}

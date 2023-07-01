@@ -172,6 +172,50 @@
           <span class="visually-hidden">Логотип HTMLAcademy.</span>
         </a>
       </footer>
+      <div class="modal-container">
+        <div class="modal">
+          <button class="modal-close-button">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+          <section class="modal-content">
+            <h2 class="modal-content-title">Поиск гостиницы в Седоне</h2>
+            <form class="search-hotel-form" action="https://echo.htmlacademy.ru/" method="post">
+              <span class="date-input-title">Дата Заезда:</span>
+              <label class="arrival-date">
+                <input class="date-input" type="text" name="arrival-date" onfocus="(this.type='date')">
+                <span class="date-example">27 апреля 2020</span>
+                <span class="warning-wrong-date">Мы не можем отправить вас в прошлое.</span>
+              </label>
+              <span class="date-input-title">Дата Выезда:</span>
+              <label class="departure-date">
+                <input class="date-input" type="text" name="departure-date" onfocus="(this.type='date')">
+                <span class="date-example">1 сентября 2023</span>
+                <span class="warning-free-date">На эти даты есть свободные номера. Пока есть.</span>
+              </label>
+              <span class="qty-adults-title">Взрослые:</span>
+              <div class="qty-people-contatiner qty-people-contatiner-adults">
+                <button class="button-change-people button-minus-people"></button>
+                <label class="qty-adults">
+                  <input class="qty-people-input" type="number" name="qty-adults" value="2">
+                </label>
+                <button class="button-change-people button-plus-people"></button>
+              </div>
+              <div class="qty-children-wrapper">
+                <span class="qty-children-title">Дети:</span>
+                <span class="information-about-children"></span>
+              </div>
+              <div class="qty-people-contatiner qty-people-contatiner-children">
+                <button class="button-change-people button-minus-people-background"></button>
+                <label class="qty-adults">
+                  <input class="qty-people-input" type="number" name="qty-children" value="2">
+                </label>
+                <button class="button-change-people button-plus-people-background"></button>
+              </div>
+              <button class="button button-blue button-found" type="submit">Найти</button>
+            </form>
+          </section>
+        </div>
+      </div>
     </div>
   </body>
 </html>
