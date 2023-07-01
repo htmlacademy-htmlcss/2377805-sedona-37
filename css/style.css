@@ -818,7 +818,7 @@ body {
 
 .control-input[type="checkbox"]:checked + .control-mark::before{
     position: absolute;
-    top: 1px;
+    top: 0;
     width: 20px;
     height: 19px;
     background-image: url(../img/tick.svg);
@@ -1430,10 +1430,11 @@ body {
 }
 
 /* Отключание видимости модального окна*/
-
+/*
 .modal-container {
     display: none;
 }
+*/
 
 .modal {
     position: relative;
@@ -1577,10 +1578,6 @@ body {
     color: #333333;
 }
 
-.date-input:hover + .date-example {
-    display: none;
-}
-
 .qty-people-contatiner {
     display: flex;
     justify-content: flex-start;
@@ -1593,47 +1590,57 @@ body {
 }
 
 .button-change-people {
+    position: absolute;
     border: none;
     cursor: pointer;
-    padding: 14px 10px;
     background: #F2F2F2;
     box-sizing: border-box;
-    width: 40px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    transition-property: outline;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
 }
 
-.button-minus-people {
-    border-radius: 4px 0 0 4px;
-}
-
-.button-plus-people {
-    border-radius: 0 4px 4px 0;
-}
-
-.button-minus-people:before {
+.button-minus-people-background {
     position: absolute;
-    content: "";
-    border: 1px solid rgba(117, 97, 87, 0.3);
-    width: 12px;
-    top: 23px;
-    left: 13px;
+    left: 10px;
+    top: 14px;
+    background-image: url(../img/minus-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    outline: none;
 }
 
-.button-plus-people:before,
-.button-plus-people:after {
+.button-minus-people-background:hover {
+    background-image: url(../img/minus-icon-active.svg);
+}
+
+.button-minus-people-background:focus {
+    outline: 3px solid #82B3D3;
+}
+
+
+.button-plus-people-background {
     position: absolute;
-    content: "";
-    border: 1px solid rgba(117, 97, 87, 0.3);
-    width: 12px;
-    top: 23px;
-    right: 13px;
+    right: 10px;
+    top: 14px;
+    background-image: url(../img/plus-icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.button-plus-people:after {
-    transform: rotate(90deg);
+.button-plus-people-background:hover {
+    background-image: url(../img/plus-icon-active.svg);
+}
+
+.button-plus-people-background:focus {
+    outline: 3px solid #82B3D3;
 }
 
 .qty-adults {
-    width: 31px;
+    width: 110px;
 }
 
 .qty-people-input {
@@ -1648,6 +1655,7 @@ body {
     width: 100%;
     text-align: center;
     appearance: textfield;
+    border-radius: 4px;
 }
 
 .qty-people-input::-webkit-outer-spin-button,
@@ -1660,6 +1668,7 @@ body {
     grid-column: 3/4;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .qty-children-title{
@@ -1670,7 +1679,7 @@ body {
     align-self: center;
 }
 
-.information-about-children {
+.information-about-children-icon {
     display: block;
     width: 26px;
     height: 26px;
@@ -1682,22 +1691,39 @@ body {
     cursor: pointer;
 }
 
+.information-about-children {
+    position: absolute;
+    width: 256px;
+    box-sizing: border-box;
+    padding: 15px 18px 18px 22px;
+    background-color: #333333;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    top: 52px;
+    left: -57px;
+    display: none;
+}
+
+.information-about-children::before {
+    position: absolute;
+    content: "";
+    width: 19px;
+    height: 9px;
+    background-image: url(../img/triangle-detail-for-children-tip.svg);
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.information-about-children-icon:hover + .information-about-children {
+    display: block;
+}
+
 .qty-people-contatiner-children {
     grid-column: 4/5;
-}
-
-.button-minus-people-background {
-    border-radius: 4px 0 0 4px;
-    background-image: url(../img/minus-icon.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.button-plus-people-background {
-    border-radius: 0 4px 4px 0;
-    background-image: url(../img/plus-icon.svg);
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .button-found {
