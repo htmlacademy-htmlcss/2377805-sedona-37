@@ -217,7 +217,7 @@ body {
 /* Стили для hero */
 
 .hero {
-    margin-bottom: 90px;
+    margin: 0 0 69px 0;
 }
 
 .herobackground {
@@ -239,8 +239,16 @@ body {
     margin: 0;
 }
 
-.hero .title-h2 {
-    margin: 69px 290px 25px;
+
+/* Стили для секции преимущества */
+
+.advantages {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.advantages .title-h2 {
+    margin: 0 290px 25px;
     text-align: center;
 }
 
@@ -248,15 +256,7 @@ body {
     font-size: 22px;
     line-height: 26px;
     text-align: center;
-    margin: 0;
-
-}
-
-/* Стили для секции преимущества */
-
-.advantages {
-    margin: 0 auto;
-    padding: 0;
+    margin: 0 0 90px 0;
 }
 
 .agvantages-list {
