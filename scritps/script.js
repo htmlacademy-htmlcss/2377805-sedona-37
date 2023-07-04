@@ -21,3 +21,9 @@ if (document.querySelector('.departure-date .date-input + .date-example')) {
     document.querySelector('.departure-date .date-input + .date-example').remove();
     });
 }
+
+document.querySelector('.modal-close-button').addEventListener('click', ()=> {
+    document.querySelector('.modal-container').classList.add('visually-hidden')});
+
+document.querySelector('.button-booking').addEventListener('click', ()=> {
+    document.querySelector('.modal-container').classList.remove('visually-hidden')});
