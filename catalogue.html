@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="shadow">
-      <header class="main-header">
+      <header class="main-header" data-test="header">
         <div class="heared-logo">
           <img src="img/logo.svg" alt="Логотип города Седона." width="140" usemap="#image-map">
           <map name="image-map">
@@ -44,8 +44,8 @@
         </ul>
         <a class="button button-dark button-header" href="#">Хочу сюда!</a>
       </header>
-      <main class="page-main">
-        <section class="search">
+      <main class="page-main" data-test="main">
+        <section class="search" data-test="filter">
           <header class="search-header">
             <h1 class="search-header-title">Гостиницы Седоны</h1>
             <ul class="breadcrumbs">
@@ -131,10 +131,10 @@
                 </div>
                 <div class="range-scale">
                   <div class="range-bar">
-                    <button class="range-toggle toggle-min">
+                    <button class="range-toggle toggle-min" type="button">
                       <span class="visually-hidden">Изменить минимальную цену.</span>
                     </button>
-                    <button class="range-toggle toggle-max">
+                    <button class="range-toggle toggle-max" type="button">
                       <span class="visually-hidden">Изменить максимальную цену.</span>
                     </button>
                   </div>
@@ -147,7 +147,7 @@
             </form>
           </section>
         </section>
-        <section class="catalogue">
+        <section class="catalogue" data-test="catalog">
           <header class="catalogue-header">
             <h2 class="catalogue-header-title">Найдено гостиниц: <output class="hotels-quantity">38</output></h2>
             <select class="select-control" aria-label="Сортировка">
@@ -190,10 +190,10 @@
                 </div>
                 <ul class="hotel-buttons-list">
                   <li class="hotel-buttons-item">
-                    <p class="button-more-conatainer"><a href="#" class="button button-dark button-more">Подробнее</a></p>
+                    <a href="#" class="button button-dark button-more">Подробнее</a>
                   </li>
                   <li class="hotel-buttons-item">
-                    <p class="button-add-favourite-container"><button class="button button-blue button-add-favourite" type="submit">В избранное</button></p>
+                    <button class="button button-blue button-add-favourite" type="submit">В избранное</button>
                   </li>
                   <li class="hotel-buttons-item">
                     <p class="hotel-rating-stars four-stars" aria-label="Количество звезд у гостиницы"></p>
@@ -216,10 +216,10 @@
                 </div>
                 <ul class="hotel-buttons-list">
                   <li class="hotel-buttons-item">
-                    <p class="button-more-conatainer"><a href="#" class="button button-dark button-more">Подробнее</a></p>
+                    <a href="#" class="button button-dark button-more">Подробнее</a>
                   </li>
                   <li class="hotel-buttons-item">
-                    <p class="button-add-favourite-container"><button class="button button-add-favourite button-add-favourite-applied" type="submit">В избранном</button></p>
+                    <button class="button button-add-favourite button-add-favourite-applied" type="submit">В избранном</button>
                   </li>
                   <li class="hotel-buttons-item">
                     <p class="hotel-rating-stars four-stars" aria-label="Количество звезд у гостиницы"></p>
@@ -242,10 +242,10 @@
                 </div>
                 <ul class="hotel-buttons-list">
                   <li class="hotel-buttons-item">
-                    <p class="button-more-conatainer"><a href="#" class="button button-dark button-more">Подробнее</a></p>
+                    <a href="#" class="button button-dark button-more">Подробнее</a>
                   </li>
                   <li class="hotel-buttons-item">
-                    <p class="button-add-favourite-container"><button class="button button-blue button-add-favourite" type="submit">В избранное</button></p>
+                    <button class="button button-blue button-add-favourite" type="submit">В избранное</button>
                   </li>
                   <li class="hotel-buttons-item">
                     <p class="hotel-rating-stars three-stars" aria-label="Количество звезд у гостиницы"></p>
@@ -268,10 +268,10 @@
                 </div>
                 <ul class="hotel-buttons-list">
                   <li class="hotel-buttons-item">
-                    <p class="button-more-conatainer"><a href="#" class="button button-dark button-more">Подробнее</a></p>
+                    <a href="#" class="button button-dark button-more">Подробнее</a>
                   </li>
                   <li class="hotel-buttons-item">
-                    <p class="button-add-favourite-container"><button class="button button-blue button-add-favourite" type="submit">В избранное</button></p>
+                    <button class="button button-blue button-add-favourite" type="submit">В избранное</button>
                   </li>
                   <li class="hotel-buttons-item">
                     <p class="hotel-rating-stars two-stars" aria-label="Количество звезд у гостиницы"></p>
@@ -304,7 +304,7 @@
             </li>
           </ul>
         </section>
-        <section class="subscription subscription-page-catalogue">
+        <section class="subscription subscription-page-catalogue" data-test="subscribe">
           <h2 class="title-h2">Подпишитесь на рассылку</h2>
           <p class="subscription-promises">Только полезная информация и никакого спама, честное бойскаутское!</p>
           <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
@@ -317,7 +317,7 @@
           </form>
         </section>
       </main>
-      <footer class="main-footer">
+      <footer class="main-footer" data-test="footer">
         <ul class="social-networks">
           <li class="social-network-item">
             <a class="social-network-link" href="https://vk.com/htmlacademy">
