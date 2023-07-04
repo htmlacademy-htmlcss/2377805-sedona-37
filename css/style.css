@@ -289,11 +289,7 @@ body {
     align-items: center;
 }
 
-.advantage-item-photo-wrapper {
-    height: 100%;
-}
-
-.advantage-item-photo-wrapper-position-before {
+.advantage-item-photo-position-before {
     order: -1;
 }
 
