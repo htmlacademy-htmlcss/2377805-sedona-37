@@ -59,11 +59,15 @@ body {
 
 .main-header {
 width: 1060px;
-height: 64px;
-margin: 0 auto;
+min-height: 64px;
+margin: 0 auto -6px;
 padding: 0 70px;
 display: flex;
 z-index: 1;
+}
+
+.heared-logo img {
+  display: block;
 }
 
 .header-navigation {
@@ -105,8 +109,6 @@ z-index: 1;
   color: #000000;
 }
 
-
-
 .header-buttons {
   display: flex;
   list-style: none;
@@ -119,8 +121,6 @@ z-index: 1;
   margin: 0 6px;
   text-align: center;
   line-height: 64px;
-
-
 }
 
 .navigation-user-link {
