@@ -50,7 +50,7 @@
         <section class="hero" data-test="hero">
           <h2 class="visually-hidden">Приветственное слово</h2>
           <div class="herobackground">
-            <img class="welcome-words" src="img/welcome.svg" alt="Добро пожаловать в великолепную Седону. Потому что Гранд Каньон отстой!">
+            <img class="welcome-words" src="img/welcome.svg" alt="Добро пожаловать в великолепную Седону. Потому что Гранд Каньон отстой!" width="458" height="352">
           </div>
         </section>
         <section class="advantages" data-test="advantages">
@@ -63,7 +63,7 @@
                 <h3 class="advantage-item-title">Настоящий городок</h3>
                 <p class="advantage-item-description">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
               </div>
-              <img class="advantage-item-photo" src="img/photo-1-building-in-sedona.jpg" alt="Здание в Седоне.">
+              <img class="advantage-item-photo" src="img/photo-1-building-in-sedona.jpg" alt="Здание в Седоне." width="800" height="385">
             </li>
             <li class="advantage-item advantage-item-background-light-blue">
               <h3 class="advantage-item-title">Небольшая площадь</h3>
@@ -82,7 +82,7 @@
                 <h3 class="advantage-item-title">Там есть мост&#160;дьявола</h3>
                 <p class="advantage-item-description">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
               </div>
-              <img class="advantage-item-photo advantage-item-photo-position-before" src="img/photo-2-canyon-image.jpg" alt="Вид на каньон.">
+              <img class="advantage-item-photo advantage-item-photo-position-before" src="img/photo-2-canyon-image.jpg" alt="Вид на каньон."  width="800" height="385">
             </li>
           </ul>
         </section>
@@ -93,17 +93,14 @@
           </div>
           <ul class="suggestion-list">
             <li class="suggestion-item suggestion-item-background-light-blue">
-              <img src="img/advantage-icon-home.svg" alt="Иконка домика." width="75" height="72">
               <h3 class="sugestion-item-title">Жильё</h3>
               <p class="sugestion-item-description">Рекомендуем пожить <br> в настоящем мотеле, <br> всё как в кино!</p>
             </li>
             <li class="suggestion-item">
-              <img src="img/advantage-icon-food.svg" alt="Иконка бургера." width="75" height="72">
               <h3 class="sugestion-item-title">Еда</h3>
               <p class="sugestion-item-description">Всегда заказывайте <br> топовый фирменный бургер, вы не разочаруетесь!</p>
             </li>
             <li class="suggestion-item suggestion-item-background-light-blue">
-              <img src="img/advantage-icon-souvenir.svg" alt="Иконка сувенира." width="75" height="72">
               <h3 class="sugestion-item-title">Сувениры</h3>
               <p class="sugestion-item-description">Не только китайского, <br> но и настоящего местного производства!</p>
             </li>
@@ -120,7 +117,7 @@
           <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
             <p class="subscription-form-inline">
               <label class="form-label">
-                <input class="email" type="email" name="subscriber-email" placeholder="Ваш e-mail">
+                <input class="email" type="email" name="subscriber-email" placeholder="Ваш e-mail" required>
               </label>
               <button class="button button-blue button-subscribe" type="submit">Подписаться</button>
             </p>
@@ -175,42 +172,36 @@
       </footer>
       <div class="modal-container visually-hidden" data-test="modal">
         <div class="modal">
-          <button class="modal-close-button">
+          <button class="modal-close-button" type="button">
             <span class="visually-hidden">Закрыть</span>
           </button>
           <section class="modal-content">
             <h2 class="modal-content-title">Поиск гостиницы в Седоне</h2>
             <form class="search-hotel-form" action="https://echo.htmlacademy.ru/" method="post">
-              <span class="date-input-title">Дата Заезда:</span>
-              <label class="arrival-date">
-                <input class="date-input" type="text" name="arrival-date" onfocus="(this.type='date')">
+              <label class="arrival-date">Дата Заезда:
+                <input class="date-input" type="text" name="arrival-date" onfocus="(this.type='date')" required>
                 <span class="date-example">27 апреля 2020</span>
                 <span class="warning-wrong-date">Мы не можем отправить вас в прошлое.</span>
               </label>
-              <span class="date-input-title">Дата Выезда:</span>
-              <label class="departure-date">
-                <input class="date-input" type="text" name="departure-date" onfocus="(this.type='date')">
+              <label class="departure-date">Дата Выезда:
+                <input class="date-input" type="text" name="departure-date" onfocus="(this.type='date')" required>
                 <span class="date-example">1 сентября 2023</span>
                 <span class="warning-free-date">На эти даты есть свободные номера. Пока есть.</span>
               </label>
-              <span class="qty-adults-title">Взрослые:</span>
+              <label class="qty-adults-title" for="qty-adults-people-input">Взрослые:</label>
               <div class="qty-people-contatiner qty-people-contatiner-adults">
                 <button class="button-change-people button-minus-people-background" type="button"></button>
-                <label class="qty-adults">
-                  <input class="qty-people-input" type="number" name="qty-adults" value="2">
-                </label>
+                <input class="qty-people-input" id="qty-adults-people-input" type="number" name="qty-adults" value="2" required>
                 <button class="button-change-people button-plus-people-background" type="button"></button>
               </div>
-              <div class="qty-children-wrapper">
+              <label class="qty-children-wrapper" for="qty-children-people-input">
                 <span class="qty-children-title">Дети:</span>
-                <span class="information-about-children-icon"></span>
-                <span class="information-about-children">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
-              </div>
+                <span class="information-about-children-icon" aria-labelledby="tooltip-about-children"></span>
+                <span class="information-about-children" role="tooltip" id="tooltip-about-children">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+              </label>
               <div class="qty-people-contatiner qty-people-contatiner-children">
                 <button class="button-change-people button-minus-people-background" type="button"></button>
-                <label class="qty-adults">
-                  <input class="qty-people-input" type="number" name="qty-children" value="2">
-                </label>
+                <input class="qty-people-input" id="qty-children-people-input" type="number" name="qty-children" value="2">
                 <button class="button-change-people button-plus-people-background" type="button"></button>
               </div>
               <button class="button button-blue button-found" type="submit">Найти</button>
