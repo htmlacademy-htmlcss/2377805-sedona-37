@@ -39,6 +39,7 @@
             <a class="navigation-user-link  navigation-user-link-favourite" href="#">
               <span class="visually-hidden">Избранное</span>
               <img src="img/heart.svg" width="20" height="20" alt="Значок избранное.">
+              <span class="favourite-counter">12</span>
             </a>
           </li>
         </ul>
@@ -52,7 +53,7 @@
               <li class="breadcrumbs-item breadcrumbs-item-home">
                 <span class="breadcrumb-home-logo">
                   <a class="breadcrumbs-link" href="index.html">
-                    <img src="img/breadcrumbs-home.svg" width="13" height="15" alt="Иконка домой.">
+                    <img src="img/breadcrumbs-home-icon.svg" width="13" height="15" alt="Иконка домой.">
                     <span class="visually-hidden">Домой</span>
                   </a>
                 </span>
@@ -121,11 +122,11 @@
                 <legend class="filter-catalogue-title">Стоимость, &#8381;:</legend>
                 <div class="filter-catalogue-price-container">
                   <div class="filter-catalogue-price-wrapper">
-                    <input type="text" id="price-from" name="minimum-price" value="0">
+                    <input type="text" id="price-from" name="minimum-price" value="0" required>
                     <label class="filter-catalogue-price-from" for="price-from" aria-label="цена гостиницы от">от</label>
                   </div>
                   <div class="filter-catalogue-price-wrapper">
-                    <input type="text" id="price-up-to" name="maximum-price" value="9000">
+                    <input type="text" id="price-up-to" name="maximum-price" value="9000" required>
                     <label class="filter-catalogue-price-to" for="price-up-to" aria-label="цена гостиницы до">до</label>
                   </div>
                 </div>
@@ -193,7 +194,7 @@
                     <a href="#" class="button button-dark button-more">Подробнее</a>
                   </li>
                   <li class="hotel-buttons-item">
-                    <button class="button button-blue button-add-favourite" type="submit">В избранное</button>
+                    <button class="button button-blue button-add-favourite" type="button">В избранное</button>
                   </li>
                   <li class="hotel-buttons-item">
                     <span class="visually-hidden">Количество звезд у гостиницы</span>
@@ -220,7 +221,7 @@
                     <a href="#" class="button button-dark button-more">Подробнее</a>
                   </li>
                   <li class="hotel-buttons-item">
-                    <button class="button button-add-favourite button-add-favourite-applied" type="submit">В избранном</button>
+                    <button class="button button-add-favourite button-add-favourite-applied" type="button">В избранном</button>
                   </li>
                   <li class="hotel-buttons-item">
                     <span class="visually-hidden">Количество звезд у гостиницы</span>
@@ -247,7 +248,7 @@
                     <a href="#" class="button button-dark button-more">Подробнее</a>
                   </li>
                   <li class="hotel-buttons-item">
-                    <button class="button button-blue button-add-favourite" type="submit">В избранное</button>
+                    <button class="button button-blue button-add-favourite" type="button">В избранное</button>
                   </li>
                   <li class="hotel-buttons-item">
                     <span class="visually-hidden">Количество звезд у гостиницы</span>
@@ -274,7 +275,7 @@
                     <a href="#" class="button button-dark button-more">Подробнее</a>
                   </li>
                   <li class="hotel-buttons-item">
-                    <button class="button button-blue button-add-favourite" type="submit">В избранное</button>
+                    <button class="button button-blue button-add-favourite" type="button">В избранное</button>
                   </li>
                   <li class="hotel-buttons-item">
                     <span class="visually-hidden">Количество звезд у гостиницы</span>
@@ -314,7 +315,7 @@
           <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
             <p class="subscription-form-inline">
               <label class="form-label">
-                <input class="email email-dark" type="email" name="subscriber-email" placeholder="Ваш e-mail">
+                <input class="email email-dark" type="email" name="subscriber-email" placeholder="Ваш e-mail" required>
               </label>
               <button class="button button-blue button-subscribe" type="submit">Подписаться</button>
             </p>
